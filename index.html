@@ -7,77 +7,49 @@
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0F172A;
-    --slate: #1E293B;
-    --blue: #0047AB;
-    --blue-light: #2563C8;
-    --bg: #F8FAFC;
-    --card: #FFFFFF;
-    --text: #0F172A;
-    --muted: #64748B;
-    --border: #E2E8F0;
-    --green: #059669;
-    --green-bg: #D1FAE5;
-    --amber: #D97706;
-    --amber-bg: #FEF3C7;
+    --navy: #0F172A; --slate: #1E293B; --blue: #0047AB; --blue-light: #2563C8;
+    --bg: #F8FAFC; --card: #FFFFFF; --text: #0F172A; --muted: #64748B;
+    --border: #E2E8F0; --green: #059669; --green-bg: #D1FAE5;
+    --amber: #D97706; --amber-bg: #FEF3C7;
   }
   * { box-sizing: border-box; }
-  body {
-    margin: 0; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; line-height: 1.55;
-  }
-  h1, h2, h3, .kpi .value { font-family: "Sora", "Inter", sans-serif; letter-spacing: -0.01em; }
-  header.hero {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 50%, var(--blue) 100%);
-    color: white; padding: 40px 48px;
-  }
+  body { margin: 0; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+  h1, h2, h3 { font-family: "Sora", "Inter", sans-serif; letter-spacing: -0.01em; }
+  header.hero { background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 50%, var(--blue) 100%);
+    color: white; padding: 36px 48px; }
   header.hero .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; margin-bottom: 8px; }
-  header.hero h1 { margin: 0 0 8px; font-size: 28px; font-weight: 600; }
+  header.hero h1 { margin: 0 0 6px; font-size: 26px; font-weight: 600; }
   header.hero .sub { font-size: 14px; opacity: 0.85; }
-  header.hero .meta { margin-top: 16px; font-size: 13px; display: flex; gap: 24px; flex-wrap: wrap; opacity: 0.92; }
-  header.hero .meta span strong { font-weight: 600; opacity: 1; }
+  header.hero .meta { margin-top: 14px; font-size: 12.5px; display: flex; gap: 22px; flex-wrap: wrap; opacity: 0.92; }
+  header.hero .meta strong { font-weight: 600; }
 
-  main { max-width: 1100px; margin: 0 auto; padding: 32px 40px 80px; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 40px 80px; }
 
-  .summary-block {
+  .lede {
     background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 28px 32px; margin-bottom: 28px; box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+    padding: 22px 28px; margin-bottom: 28px; font-size: 15px; color: var(--slate);
   }
-  .summary-block h2 { margin: 0 0 14px; font-size: 18px; color: var(--navy); font-weight: 600; }
-  .summary-block p.lede { font-size: 15px; color: var(--slate); margin: 0 0 18px; }
+  .lede strong { color: var(--navy); font-weight: 600; }
 
-  .kpi-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin-bottom: 24px;
-  }
-  .kpi {
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    padding: 18px 20px; text-align: left;
-  }
-  .kpi .label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-  .kpi .value { font-size: 30px; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
-  .kpi .delta { font-size: 12px; color: var(--green); margin-top: 4px; }
-  .kpi .delta.amber { color: var(--amber); }
-
-  section.module { margin-top: 36px; }
+  section.module { margin-top: 32px; }
   section.module h2 {
-    font-size: 18px; color: var(--navy); margin: 0 0 16px;
-    padding-bottom: 8px; border-bottom: 2px solid var(--blue); display: inline-block;
+    font-size: 17px; color: var(--navy); margin: 0 0 14px;
+    padding-bottom: 6px; border-bottom: 2px solid var(--blue); display: inline-block;
   }
-  section.module .lede { color: var(--muted); font-size: 13px; margin: -8px 0 14px; }
 
-  .item-list { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 8px 0; }
-  .item { padding: 14px 22px; border-bottom: 1px solid var(--border); font-size: 14px; }
-  .item:last-child { border-bottom: none; }
-  .item .title { font-weight: 600; color: var(--navy); margin-bottom: 4px; }
-  .item .body { color: var(--slate); font-size: 13.5px; line-height: 1.6; }
-  .item .body a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(0,71,171,0.25); }
-  .item .body a:hover { border-bottom-color: var(--blue); }
-  .item .meta-line { font-size: 12px; color: var(--muted); margin-top: 4px; }
-  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px;
-    font-weight: 600; letter-spacing: 0.04em; margin-right: 6px; vertical-align: middle; }
-  .tag.shipped { background: var(--green-bg); color: var(--green); }
-  .tag.flight { background: var(--amber-bg); color: var(--amber); }
-  .tag.fix { background: #DBEAFE; color: var(--blue); }
+  .ship-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 22px; margin-bottom: 14px;
+  }
+  .ship-card .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 8px; }
+  .ship-card .title { font-weight: 600; color: var(--navy); font-size: 15px; }
+  .ship-card .meta { font-size: 12px; color: var(--muted); }
+  .ship-card .meta strong { color: var(--slate); font-weight: 600; }
+  .ship-card .body { font-size: 13.5px; color: var(--slate); margin-bottom: 8px; }
+  .ship-card .links { font-size: 12.5px; }
+  .ship-card .links a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(0,71,171,0.25); margin-right: 16px; }
+  .ship-card .links a:hover { border-bottom-color: var(--blue); }
 
   .dashboards { display: grid; grid-template-columns: 1fr; gap: 22px; }
   .dash-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
@@ -86,20 +58,22 @@
   .dash-card .dash-head .src { font-size: 12px; color: var(--muted); }
   .dash-card img { display: block; width: 100%; height: auto; border-top: 1px solid var(--border); }
 
-  .numbers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
-  .num-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; }
-  .num-card .name { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-  .num-card .figure { font-size: 22px; font-weight: 700; color: var(--navy); font-variant-numeric: tabular-nums; }
-  .num-card .note { font-size: 12.5px; color: var(--slate); margin-top: 6px; line-height: 1.5; }
+  .next-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 22px; font-size: 13.5px; color: var(--slate);
+  }
+  .next-card .label { font-size: 11px; color: var(--amber); font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+  .next-card strong { color: var(--navy); font-weight: 600; }
 
-  footer.meta-footer { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border);
+  footer.meta-footer { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--border);
     font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   footer.meta-footer a { color: var(--blue); text-decoration: none; }
 
   @media (max-width: 720px) {
     main { padding: 24px 20px 60px; }
-    header.hero { padding: 32px 22px; }
-    header.hero h1 { font-size: 22px; }
+    header.hero { padding: 28px 22px; }
+    header.hero h1 { font-size: 21px; }
   }
 </style>
 </head>
@@ -108,233 +82,87 @@
 <header class="hero">
   <div class="eyebrow">Cobalt Intelligence · Weekly Status</div>
   <h1>Week of April 25 to May 1, 2026</h1>
-  <div class="sub">Content marketing, newsletters, AEO, events, customer programs.</div>
+  <div class="sub">Items Shela posted to Slack this week. Standing dashboards below.</div>
   <div class="meta">
     <span><strong>For:</strong> Jordan</span>
     <span><strong>From:</strong> Shela</span>
-    <span><strong>Period:</strong> Apr 25 to May 1, 2026 (ISO Week 18)</span>
+    <span><strong>Period:</strong> Apr 25 to May 1, 2026</span>
     <span><strong>Generated:</strong> May 1, 2026</span>
   </div>
 </header>
 
 <main>
 
-  <div class="summary-block">
-    <h2>Executive summary</h2>
-    <p class="lede">
-      Three Beyond Banks newsletter editions shipped on cadence, ten YouTube Shorts scripts plus ten blogs published with hero images, Broker Fair playbook hardened to v4 with sourced operator depth, and the Searchable AEO subscription replaced with a self-hosted monitor that saves $1,396 per year. Net result: more output, lower spend, and the first week of LLM-citation baseline data Cobalt has ever owned.
-    </p>
-    <div class="kpi-grid">
-      <div class="kpi"><div class="label">Newsletters shipped</div><div class="value">3</div><div class="delta">on cadence</div></div>
-      <div class="kpi"><div class="label">Blogs &amp; shorts</div><div class="value">10 + 10</div><div class="delta">with hero images</div></div>
-      <div class="kpi"><div class="label">AEO baseline</div><div class="value">47.4%</div><div class="delta">154 prompts measured</div></div>
-      <div class="kpi"><div class="label">Annual savings</div><div class="value">$1,396</div><div class="delta">tooling consolidation</div></div>
-    </div>
-    <ul style="margin: 0; padding-left: 20px; color: var(--slate); font-size: 14px; line-height: 1.7;">
-      <li><strong>Pioneer / Targeted Lending lead</strong> rewritten to 8.5/10 alt-rater depth (5 CRO operator angles) and pushed live Apr 25.</li>
-      <li><strong>Treasury CDFI</strong> and <strong>Aliya Sports + All Pro Capital $19.8M plea</strong> editions shipped Apr 28 and Apr 30 with full Stage 9 post-publish (HYDWM Tracker, news_data.json, archive regen).</li>
-      <li><strong>Broker Fair (June 1, NYC)</strong> playbook v4 shipped: 6-tab ABM Tracker, competitor cheat sheet, Patricia LinkedIn drafts T-21 / T-7, Underwriter's Brief 6-page bundle, Bitty co-marketing gift package.</li>
-      <li><strong>AEO self-monitor</strong> live on Mon 7:10 AM cron, top 5 zero-mention prompts identified driving 5,000+ combined LLM sessions with 0% citation rate.</li>
-      <li><strong>Newsletter post-publish pipeline</strong> hardened with idempotency guard, mandatory --lead-topic flag, and canonical 7-topic enum.</li>
-    </ul>
+  <div class="lede">
+    Two items shared with stakeholders this week, both Apr 30. <strong>Trial Dashboard</strong> got a security upgrade (Jordan, #marketing). <strong>Working Planet</strong> onboarding package shipped (#workingplanet-cobalt). Standing SEO and traffic dashboards below for context.
   </div>
 
   <section class="module">
-    <h2>Dashboards (live snapshots)</h2>
-    <p class="lede">Pulled from Lala's local dashboards on May 1. Live versions read directly from the SEO KPI Tracker 2026 sheet and the Looker GA4 export.</p>
+    <h2>Shipped &amp; shared</h2>
+
+    <div class="ship-card">
+      <div class="row">
+        <div class="title">Trial Dashboard · security upgrade</div>
+        <div class="meta">To <strong>Jordan</strong> · #marketing · Apr 30</div>
+      </div>
+      <div class="body">
+        Rotated trial dashboard password from <code>cobalt123</code> to a 24-char random string, AES-256-GCM with PBKDF2-SHA256 at 600k iterations (OWASP 2023+ minimum). New password sent via 1Password share for Jordan's vault as "Cobalt Trial Dashboard – staging." Caveat noted: encrypted file is still publicly downloadable so an offline brute-force is theoretically possible, but the new password makes that infeasible at current compute. Cloudflare Access (free Zero Trust + email OTP) offered as the structural fix when Jordan has 30 minutes.
+      </div>
+      <div class="links">
+        <a href="https://staging.cobaltintelligence.com/lp/trials/">staging.cobaltintelligence.com/lp/trials/</a>
+        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1777484395185649">Slack thread</a>
+      </div>
+    </div>
+
+    <div class="ship-card">
+      <div class="row">
+        <div class="title">Working Planet · onboarding package</div>
+        <div class="meta">To <strong>WP partner team</strong> · #workingplanet-cobalt · Apr 30</div>
+      </div>
+      <div class="body">
+        Two-document onboarding kit so the WP team can self-serve our lead and revenue data. Doc 1 is a CRM walkthrough (Close.io): Lead Statuses, Lead Sources, How statuses change, Customer Identifiers across the funnel. Doc 2 is the Sales Data Analytics Dashboard (revenue and churn by account, lead-attribution to creating account) with 1Password access. Note included: webflow is for blogs only, not the main site.
+      </div>
+      <div class="links">
+        <a href="https://cobaltintelligence.slack.com/archives/C0B0DNX718A/p1777484097886029">Slack thread</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="module">
+    <h2>Standing dashboards (live snapshots)</h2>
+
     <div class="dashboards">
 
       <div class="dash-card">
         <div class="dash-head">
-          <h3>SEO KPI Dashboard · Year-to-date totals</h3>
-          <div class="src">Source: SEO KPI Tracker 2026 · weekly + monthly trends · Cobalt Intelligence</div>
+          <h3>SEO KPI · year-to-date</h3>
+          <div class="src">SEO KPI Tracker 2026 · weekly + monthly trends</div>
         </div>
-        <img src="assets/seo-kpi-dashboard.png" alt="SEO KPI Dashboard showing 26,964 total users, 23,944 new users, 28,526 sessions, 29,692 page views, and 3 booked calls year to date with monthly trend charts." />
+        <img src="assets/seo-kpi-dashboard.png" alt="SEO KPI Dashboard showing year-to-date metrics for Cobalt Intelligence: 26,964 total users, 23,944 new users, 28,526 sessions, 29,692 page views, and 3 booked calls, with monthly trend charts." />
       </div>
 
       <div class="dash-card">
         <div class="dash-head">
-          <h3>Traffic Insights · Last 7 days</h3>
-          <div class="src">Source: GA4 Property F38B7778 · 30-day and 7-day refresh · Cobalt Intelligence</div>
+          <h3>Traffic Insights · last 7 days</h3>
+          <div class="src">GA4 Property F38B7778 · refreshes weekly and monthly</div>
         </div>
-        <img src="assets/traffic-insights.png" alt="Traffic Insights dashboard showing 768 sessions in the last 7 days, with traffic broken down by URL bucket: homepage drives 765 of 768 sessions, with /trial-account, /faq, /reviews, and /credit-rate-modeling appearing in the bucket table." />
+        <img src="assets/traffic-insights.png" alt="Traffic Insights dashboard for the last 7 days: 768 sessions, homepage drives 765 of them, with /trial-account, /faq, /reviews, and /credit-rate-modeling appearing in the URL bucket table." />
       </div>
 
     </div>
   </section>
 
   <section class="module">
-    <h2>Shipped this week</h2>
-    <div class="item-list">
-      <div class="item">
-        <div class="title"><span class="tag shipped">SHIPPED</span> Beyond Banks · Pioneer / Targeted Lending Equipment Finance (Apr 25)</div>
-        <div class="body">
-          Lead rewritten to 8.5/10 alt-rater depth covering five CRO operator angles: warehouse pricing, originator economics, participation desk impact, forward-flow gap, fraud-control comparison. 2,400 words, 13 inline sources, hero generated via state-hero-generator.py.
-          <div class="meta-line">Live at <a href="https://newsletter.cobaltintelligence.com/p/pioneer-targeted-lending-deal-triggers-warehouse-repricing-risk">newsletter.cobaltintelligence.com/p/pioneer-targeted-lending-deal-triggers-warehouse-repricing-risk</a></div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag shipped">SHIPPED</span> Beyond Banks · Treasury CDFI Predatory Review (Apr 28)</div>
-        <div class="body">
-          Lead plus three HYDWM cards. Stage 9 post-publish complete (News Master, HYDWM Tracker entries, news_data.json, archive regen).
-          <div class="meta-line">Live at <a href="https://newsletter.cobaltintelligence.com/p/treasury-adds-anti-bias-terms-to-cdfi-contracts">newsletter.cobaltintelligence.com/p/treasury-adds-anti-bias-terms-to-cdfi-contracts</a></div>
-        </div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag shipped">SHIPPED</span> Beyond Banks · Aliya Sports + All Pro Capital Funding $19.8M plea (Apr 30)</div>
-        <div class="body">Verification chain completed, full post-publish pipeline cleared.</div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag shipped">SHIPPED</span> 10 YouTube Shorts scripts + 10 blogs with hero images</div>
-        <div class="body">
-          Script Queue rows 31 to 40, three hook variants each (30 total), ~1,560 words. Ten blogs published live to Webflow CMS, ten hero images generated via Gemini 3 Pro Image Preview to Cloudinary, LinkedIn URLs backfilled in Script Queue column Q.
-        </div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag shipped">SHIPPED</span> Broker Fair playbook v4 (Patricia event, June 1 NYC)</div>
-        <div class="body">
-          6-tab ABM Tracker (40 starter companies, funnel tracker with trigger points), competitor cheat sheet (Middesk, Markaaz, Ocrolus, Alloy), Patricia LinkedIn posts T-21 and T-7, Underwriter's Brief 6-page bundle with Cobalt Data Assets (3-case conversion math, day-of capacity caps, lead-capture pre-commit, kill-criteria). Bitty gift package designed: Lucite + Jordan note + co-branded case study, $400 to $650 total.
-        </div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag shipped">SHIPPED</span> SignatureFUNDING Reddit Organic Strategy</div>
-        <div class="body">
-          9-section strategy: audience read, three Reddit-native archetypes, 8-step Lala + Rodge workflow, tracker spec, UTM convention, 4-week plan, 90-day success criteria. First post live beginning Apr 29. Roles split locked: Lala owns account and approval, Rodge runs prep and comment triage.
-        </div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag shipped">SHIPPED</span> Searchable to Self-Managed AEO Monitor</div>
-        <div class="body">
-          Canceled SaaS subscription, replaced with aeo-monitor.py (570 lines) on Monday 7:10 AM launchd cron. AEO Visibility panel deployed. Baseline citation rates captured for all 154 prompts. Net savings $1,396 per year.
-          <div class="meta-line">Dashboard at <a href="https://laladim.github.io/life-dashboard-site/seo-kpi-dashboard.html">laladim.github.io/life-dashboard-site/seo-kpi-dashboard.html</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="module">
-    <h2>Customer and prospect interactions</h2>
-    <div class="item-list">
-      <div class="item">
-        <div class="title">Patricia Brand-Visibility Playbook (Broker Fair, June 1)</div>
-        <div class="body">
-          Persona-aware conversation playbook, 60-second pitch, 90-second demo storyboard, 5 objection handlers, 3-tier CTAs, pre-event marketing push T-30 to T-1, day-of tactical plan, post-event follow-up engine, success metrics with CPL benchmarks. Target account list pulled from past Broker Fair sponsors (9 confirmed Tier 1/2 ICP overlap: National Funding, Pearl Capital, Forward Financing, Yellowstone Capital, Ocrolus, Hudson Cook LLP, BFS Capital, Fora Financial). Customer relationship reconciliation completed: 1West and Bitty (active paying customers) were correctly re-tagged from "cold targets" to existing accounts.
-        </div>
-      </div>
-      <div class="item">
-        <div class="title">Idea Financial case study Q&amp;A design (Apr 30)</div>
-        <div class="body">3-iteration design shipped, framing locked for the interview slot.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="module">
-    <h2>Pipeline and process improvements</h2>
-    <p class="lede">Compounding investments. These pay back across many future weeks.</p>
-    <div class="item-list">
-      <div class="item">
-        <div class="title"><span class="tag fix">PIPELINE</span> Newsletter-researcher agent v2 to v3 patch</div>
-        <div class="body">Fixed HYDWM dedup read, Edition Stats read, kill-list dedup, topic fuzzy match. Now blocks false-positive inclusion of stale republished stories before manual dedup pass.</div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag fix">PIPELINE</span> Newsletter post-publish-pipeline.py hardening</div>
-        <div class="body">Added <code>edition_already_processed()</code> idempotency guard, <code>--lead-topic</code> mandatory flag, canonical 7-topic enum. Eliminates topic-string mismatches in Edition Stats.</div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag fix">PIPELINE</span> Edition Stats cleanup</div>
-        <div class="body">One-time resort DESC + topic canonicalize + dropped Mar 31 / Apr 2 placeholder dupes via new <code>cobalt-skills/scripts/edition-stats-resort.py</code>.</div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag fix">PIPELINE</span> Broker Fair ABM Tracker</div>
-        <div class="body">6-tab sheet with funnel stages (Identified to Booked Meeting to Qualified to Proposal to Closed), trigger-point tracking, competitor intel capture, Bitty co-marketing prospects.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="module">
-    <h2>Numbers</h2>
-    <div class="numbers-grid">
-      <div class="num-card">
-        <div class="name">Newsletter editions in pipeline</div>
-        <div class="figure">5</div>
-        <div class="note">Apr 25, 28, 30 published. May 2 and May 5 scheduled.</div>
-      </div>
-      <div class="num-card">
-        <div class="name">News Analysis database</div>
-        <div class="figure">374 entries</div>
-        <div class="note">Latest: N370 Pioneer / Targeted Lending.</div>
-      </div>
-      <div class="num-card">
-        <div class="name">AEO combined mention rate</div>
-        <div class="figure">47.4%</div>
-        <div class="note">154 prompts analyzed. Perplexity 32.5%, OpenAI 24.0%, Gemini 24.7%.</div>
-      </div>
-      <div class="num-card">
-        <div class="name">Top zero-mention gaps</div>
-        <div class="figure">5 prompts</div>
-        <div class="note">P300 (4,800+ entity lookups), P301 (1,030 sessions), P302 (412), P200 (142 GSC impressions), P201 (66). Targeted in next 50-state pillar.</div>
-      </div>
-      <div class="num-card">
-        <div class="name">Searchable cancellation</div>
-        <div class="figure">$1,500 saved</div>
-        <div class="note">Net $1,396 after $104 / yr API cost. AI Overviews loss flagged for Q3 review.</div>
-      </div>
-      <div class="num-card">
-        <div class="name">Year-to-date sessions (GA4)</div>
-        <div class="figure">28,526</div>
-        <div class="note">26,964 total users, 29,692 page views, 3 booked calls.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="module">
-    <h2>Blockers resolved</h2>
-    <div class="item-list">
-      <div class="item">
-        <div class="title">Broker Fair v1 invented-claims audit</div>
-        <div class="body">WebFetch + WebSearch verified brokerfair.org's actual published speaker list against playbook v1 claims. Playbook moved from invented claims to source-cited, timing-realistic, customer-relationship-accurate execution. Two-source rule applied proactively.</div>
-      </div>
-      <div class="item">
-        <div class="title">Persona inflation pattern (M&amp;A, Regulatory, Fraud / Enforcement)</div>
-        <div class="body">alt-lender-rater rubric patched with Operator-Depth Gates. M&amp;A requires 5 angles, Regulatory caps at 5/10 without procedural-posture verification, Fraud / Enforcement requires attribution language plus subject response plus primary source plus red-flag-term attribution. Broker Fair v1 (6/10 superficial) raised to v4 (8.5/10 sourced depth) via the rubric fix.</div>
-      </div>
-      <div class="item">
-        <div class="title">Searchable OAuth MCP timeout</div>
-        <div class="body">Searchable export API was not reachable via MCP authentication. Pivoted to manual CSV export plus reconciliation script. Autonomous fix path validated.</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="module">
-    <h2>In flight and next week</h2>
-    <div class="item-list">
-      <div class="item">
-        <div class="title"><span class="tag flight">IN FLIGHT</span> Reddit Phase 0 warm-up</div>
-        <div class="body">First SignatureFUNDING post live Monday Apr 29 at 9:11 AM ET. Lala owns account, Rodge running post prep + comment triage. Two pending asks: Week 2 Archetype A draft, Reddit Voice Card template for Rodge.</div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag flight">IN FLIGHT</span> Three AEO roadmap sprints (per marketing-expert verdict)</div>
-        <div class="body">
-          Wk 2 to 4: build the 50-state Business Entity Status Definitions pillar page (closes P300, P301, P302). Wk 4 to 6: decision-stage AEO content audit for all decision-funnel prompts under 30%. Wk 6 to 10: add 39 Searchable-orphan prompts to library (154 grows to ~190).
-        </div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag flight">IN FLIGHT</span> Q3 AI Overviews review (post May 30)</div>
-        <div class="body">Check GSC Search Appearance = AI Overview impressions. If under 500 per 90 days, skip SerpAPI ($50 / mo). If material, scope SerpAPI to 18 high-priority gap prompts only.</div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag flight">IN FLIGHT</span> Broker Fair Patricia readiness (target Apr 30)</div>
-        <div class="body">5 decision questions pending Lala + Patricia: existing-customer floor relationships, Bitty Sep 2025 tier resolution, merch full-vs-trim, Bitty email send timing, designer name.</div>
-      </div>
-      <div class="item">
-        <div class="title"><span class="tag flight">IN FLIGHT</span> News fetcher audit (backlog)</div>
-        <div class="body">3 RSS feeds identified, 9 expansion candidates prepped, pending Lala approval for Stage 0 automation.</div>
-      </div>
+    <h2>Next up</h2>
+    <div class="next-card">
+      <div class="label">Awaiting Jordan</div>
+      <strong>Cloudflare Access in front of <code>/lp/trials/*</code></strong> — ~30 minutes on Jordan's side. Removes the "encrypted file is still publicly downloadable" caveat from the trial dashboard. Shela offered to coordinate when Jordan is ready.
     </div>
   </section>
 
   <footer class="meta-footer">
-    <div>Generated May 1, 2026 · Cobalt Intelligence weekly status. Confidential. For Jordan and Shela.</div>
+    <div>Generated May 1, 2026 · Cobalt Intelligence weekly status. Source: Slack-verified URLs.</div>
     <div>Repo: <a href="https://github.com/cobaltshela/cobalt-weekly-status">github.com/cobaltshela/cobalt-weekly-status</a></div>
   </footer>
 
