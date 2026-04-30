@@ -10,70 +10,73 @@
     --navy: #0F172A; --slate: #1E293B; --blue: #0047AB; --blue-light: #2563C8;
     --bg: #F8FAFC; --card: #FFFFFF; --text: #0F172A; --muted: #64748B;
     --border: #E2E8F0; --green: #059669; --green-bg: #D1FAE5;
-    --amber: #D97706; --amber-bg: #FEF3C7;
+    --amber: #D97706; --amber-bg: #FEF3C7; --red: #DC2626; --red-bg: #FEE2E2;
   }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; line-height: 1.6; }
+    background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; line-height: 1.55; }
   h1, h2, h3 { font-family: "Sora", "Inter", sans-serif; letter-spacing: -0.01em; }
   header.hero { background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 50%, var(--blue) 100%);
-    color: white; padding: 36px 48px; }
-  header.hero .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; margin-bottom: 8px; }
-  header.hero h1 { margin: 0 0 6px; font-size: 26px; font-weight: 600; }
-  header.hero .sub { font-size: 14px; opacity: 0.85; }
-  header.hero .meta { margin-top: 14px; font-size: 12.5px; display: flex; gap: 22px; flex-wrap: wrap; opacity: 0.92; }
+    color: white; padding: 32px 44px; }
+  header.hero .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; margin-bottom: 6px; }
+  header.hero h1 { margin: 0 0 6px; font-size: 24px; font-weight: 600; }
+  header.hero .sub { font-size: 13.5px; opacity: 0.85; }
+  header.hero .meta { margin-top: 12px; font-size: 12.5px; display: flex; gap: 22px; flex-wrap: wrap; opacity: 0.92; }
   header.hero .meta strong { font-weight: 600; }
 
-  main { max-width: 980px; margin: 0 auto; padding: 32px 40px 80px; }
+  main { max-width: 980px; margin: 0 auto; padding: 28px 36px 64px; }
 
   .lede {
-    background: var(--card); border: 1px solid var(--border); border-radius: 12px;
-    padding: 22px 28px; margin-bottom: 28px; font-size: 15px; color: var(--slate);
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 22px; margin-bottom: 24px; font-size: 14px; color: var(--slate);
   }
   .lede strong { color: var(--navy); font-weight: 600; }
 
-  section.module { margin-top: 32px; }
+  section.module { margin-top: 28px; }
   section.module h2 {
-    font-size: 17px; color: var(--navy); margin: 0 0 14px;
-    padding-bottom: 6px; border-bottom: 2px solid var(--blue); display: inline-block;
+    font-size: 16px; color: var(--navy); margin: 0 0 12px;
+    padding-bottom: 5px; border-bottom: 2px solid var(--blue); display: inline-block;
   }
 
   .ship-card {
     background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    padding: 18px 22px; margin-bottom: 14px;
+    padding: 16px 20px; margin-bottom: 12px;
   }
-  .ship-card .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 8px; }
-  .ship-card .title { font-weight: 600; color: var(--navy); font-size: 15px; }
-  .ship-card .meta { font-size: 12px; color: var(--muted); }
+  .ship-card .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 6px; }
+  .ship-card .title { font-weight: 600; color: var(--navy); font-size: 14.5px; }
+  .ship-card .meta { font-size: 11.5px; color: var(--muted); }
   .ship-card .meta strong { color: var(--slate); font-weight: 600; }
-  .ship-card .body { font-size: 13.5px; color: var(--slate); margin-bottom: 8px; }
-  .ship-card .links { font-size: 12.5px; }
-  .ship-card .links a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(0,71,171,0.25); margin-right: 16px; }
+  .ship-card ul { margin: 8px 0 8px 0; padding-left: 20px; font-size: 13px; color: var(--slate); line-height: 1.6; }
+  .ship-card ul li { margin-bottom: 3px; }
+  .ship-card ul li code { background: #F1F5F9; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+  .ship-card .links { font-size: 12px; margin-top: 4px; }
+  .ship-card .links a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(0,71,171,0.25); margin-right: 14px; }
   .ship-card .links a:hover { border-bottom-color: var(--blue); }
 
-  .dashboards { display: grid; grid-template-columns: 1fr; gap: 22px; }
-  .dash-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
-  .dash-card .dash-head { padding: 14px 22px; border-bottom: 1px solid var(--border); }
-  .dash-card .dash-head h3 { margin: 0 0 4px; font-size: 14px; color: var(--navy); font-weight: 600; }
-  .dash-card .dash-head .src { font-size: 12px; color: var(--muted); }
-  .dash-card img { display: block; width: 100%; height: auto; border-top: 1px solid var(--border); }
-
-  .next-card {
+  .dash-card {
     background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    padding: 18px 22px; font-size: 13.5px; color: var(--slate);
+    overflow: hidden; margin-bottom: 18px;
   }
-  .next-card .label { font-size: 11px; color: var(--amber); font-weight: 700;
-    text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-  .next-card strong { color: var(--navy); font-weight: 600; }
+  .dash-card .dash-head { padding: 12px 20px 10px; border-bottom: 1px solid var(--border); }
+  .dash-card .dash-head h3 { margin: 0 0 3px; font-size: 14px; color: var(--navy); font-weight: 600; }
+  .dash-card .dash-head .src { font-size: 11.5px; color: var(--muted); }
+  .dash-card .dash-head .src a { color: var(--blue); text-decoration: none; }
+  .dash-card img { display: block; width: 100%; height: auto; }
+  .dash-card .analysis { padding: 12px 22px 14px; background: #FAFBFC; border-top: 1px solid var(--border); }
+  .dash-card .analysis ul { margin: 0; padding-left: 18px; font-size: 13px; color: var(--slate); line-height: 1.6; }
+  .dash-card .analysis ul li { margin-bottom: 3px; }
+  .dash-card .analysis ul li strong { color: var(--navy); font-weight: 600; }
+  .dash-card .analysis ul li.win::marker { color: var(--green); }
+  .dash-card .analysis ul li.fix::marker { color: var(--red); }
 
-  footer.meta-footer { margin-top: 40px; padding-top: 22px; border-top: 1px solid var(--border);
-    font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer.meta-footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--border);
+    font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   footer.meta-footer a { color: var(--blue); text-decoration: none; }
 
   @media (max-width: 720px) {
-    main { padding: 24px 20px 60px; }
-    header.hero { padding: 28px 22px; }
-    header.hero h1 { font-size: 21px; }
+    main { padding: 20px 18px 52px; }
+    header.hero { padding: 26px 22px; }
+    header.hero h1 { font-size: 20px; }
   }
 </style>
 </head>
@@ -82,7 +85,7 @@
 <header class="hero">
   <div class="eyebrow">Cobalt Intelligence · Weekly Status</div>
   <h1>Week of April 25 to May 1, 2026</h1>
-  <div class="sub">Items Shela posted to Slack this week. Standing dashboards below.</div>
+  <div class="sub">Items Shela posted to Slack this week, plus standing dashboard analysis.</div>
   <div class="meta">
     <span><strong>For:</strong> Jordan</span>
     <span><strong>From:</strong> Shela</span>
@@ -94,7 +97,7 @@
 <main>
 
   <div class="lede">
-    Two items shared with stakeholders this week, both Apr 30. <strong>Trial Dashboard</strong> got a security upgrade (Jordan, #marketing). <strong>Working Planet</strong> onboarding package shipped (#workingplanet-cobalt). Standing SEO and traffic dashboards below for context.
+    Two items shared this week (both Apr 30): <strong>Trial Dashboard security upgrade</strong> to Jordan, and <strong>Working Planet onboarding package</strong>. Six dashboards below with current state and what stands out.
   </div>
 
   <section class="module">
@@ -105,9 +108,13 @@
         <div class="title">Trial Dashboard · security upgrade</div>
         <div class="meta">To <strong>Jordan</strong> · #marketing · Apr 30</div>
       </div>
-      <div class="body">
-        Rotated trial dashboard password from <code>cobalt123</code> to a 24-char random string, AES-256-GCM with PBKDF2-SHA256 at 600k iterations (OWASP 2023+ minimum). New password sent via 1Password share for Jordan's vault as "Cobalt Trial Dashboard – staging." Caveat noted: encrypted file is still publicly downloadable so an offline brute-force is theoretically possible, but the new password makes that infeasible at current compute. Cloudflare Access (free Zero Trust + email OTP) offered as the structural fix when Jordan has 30 minutes.
-      </div>
+      <ul>
+        <li>Password rotated from <code>cobalt123</code> to a 24-char random string.</li>
+        <li>Crypto upgraded to AES-256-GCM with PBKDF2-SHA256 at 600k iterations (OWASP 2023+ minimum).</li>
+        <li>New password sent via 1Password share for Jordan's vault as "Cobalt Trial Dashboard staging".</li>
+        <li>Honest caveat: encrypted file is still publicly downloadable, so an offline brute-force is theoretically possible. New password makes that infeasible at current compute.</li>
+        <li>Cloudflare Access (free Zero Trust + email OTP) offered as the structural fix when Jordan has 30 minutes.</li>
+      </ul>
       <div class="links">
         <a href="https://staging.cobaltintelligence.com/lp/trials/">staging.cobaltintelligence.com/lp/trials/</a>
         <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1777484395185649">Slack thread</a>
@@ -119,9 +126,11 @@
         <div class="title">Working Planet · onboarding package</div>
         <div class="meta">To <strong>WP partner team</strong> · #workingplanet-cobalt · Apr 30</div>
       </div>
-      <div class="body">
-        Two-document onboarding kit so the WP team can self-serve our lead and revenue data. Doc 1 is a CRM walkthrough (Close.io): Lead Statuses, Lead Sources, How statuses change, Customer Identifiers across the funnel. Doc 2 is the Sales Data Analytics Dashboard (revenue and churn by account, lead-attribution to creating account) with 1Password access. Note included: webflow is for blogs only, not the main site.
-      </div>
+      <ul>
+        <li>Doc 1: Close.io CRM walkthrough (Lead Statuses, Lead Sources, Status changes, Customer Identifiers across the funnel).</li>
+        <li>Doc 2: Sales Data Analytics Dashboard (revenue and churn by account, lead-attribution to creating account) with 1Password access.</li>
+        <li>Note included: Webflow is for blogs only, not the main site.</li>
+      </ul>
       <div class="links">
         <a href="https://cobaltintelligence.slack.com/archives/C0B0DNX718A/p1777484097886029">Slack thread</a>
       </div>
@@ -130,39 +139,102 @@
   </section>
 
   <section class="module">
-    <h2>Standing dashboards (live snapshots)</h2>
+    <h2>Standing dashboards</h2>
 
-    <div class="dashboards">
-
-      <div class="dash-card">
-        <div class="dash-head">
-          <h3>SEO KPI · year-to-date</h3>
-          <div class="src">SEO KPI Tracker 2026 · weekly + monthly trends</div>
-        </div>
-        <img src="assets/seo-kpi-dashboard.png" alt="SEO KPI Dashboard showing year-to-date metrics for Cobalt Intelligence: 26,964 total users, 23,944 new users, 28,526 sessions, 29,692 page views, and 3 booked calls, with monthly trend charts." />
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>SEO KPI · year-to-date</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/seo-kpi-dashboard.html">Live dashboard</a> · Ahrefs DR + GA4 trends</div>
       </div>
-
-      <div class="dash-card">
-        <div class="dash-head">
-          <h3>Traffic Insights · last 7 days</h3>
-          <div class="src">GA4 Property F38B7778 · refreshes weekly and monthly</div>
-        </div>
-        <img src="assets/traffic-insights.png" alt="Traffic Insights dashboard for the last 7 days: 768 sessions, homepage drives 765 of them, with /trial-account, /faq, /reviews, and /credit-rate-modeling appearing in the URL bucket table." />
+      <img src="assets/seo-kpi-dashboard.png" alt="SEO KPI Dashboard YTD: Domain Rating 37, 26.9K total users, 28.5K sessions, 29.7K page views, 3 booked calls, 31 created accounts." />
+      <div class="analysis">
+        <ul>
+          <li><strong>YTD volume:</strong> 26.9K users, 28.5K sessions, 29.7K page views, 31 created accounts. Domain Rating 37 (Ahrefs, Apr 23).</li>
+          <li class="fix"><strong>Trend down vs prior:</strong> Users -38%, Sessions -35%, Page Views -36%, Created Accounts -28%. Booked Calls flat at 3.</li>
+          <li><strong>Read:</strong> Charts show the dropoff is concentrated post Feb 2026 peak. Recovery in last 4 weeks is shallow. AEO and Newsletter dashboards below explain part of it.</li>
+        </ul>
       </div>
-
     </div>
-  </section>
 
-  <section class="module">
-    <h2>Next up</h2>
-    <div class="next-card">
-      <div class="label">Awaiting Jordan</div>
-      <strong>Cloudflare Access in front of <code>/lp/trials/*</code></strong> — ~30 minutes on Jordan's side. Removes the "encrypted file is still publicly downloadable" caveat from the trial dashboard. Shela offered to coordinate when Jordan is ready.
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>Traffic Insights · last 7 days</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/traffic-insights.html">Live dashboard</a> · GA4 weekly + monthly</div>
+      </div>
+      <img src="assets/traffic-insights.png" alt="Traffic Insights last 7 days: 768 sessions, /(homepage) 335 sessions, 8 AI search clicks, Organic Search best blog channel." />
+      <div class="analysis">
+        <ul>
+          <li><strong>768 sessions, 7 days.</strong> Homepage at 335, /blog at 218, /post at 72. AI search clicks: 8 (ChatGPT + Perplexity + others).</li>
+          <li class="win"><strong>What's working:</strong> Funnel pages convert: /dashboard, /login, /create-account all bounce below 10%. AI Search has the lowest bounce rate of any channel.</li>
+          <li class="fix"><strong>What to fix:</strong> /directory* bounces near 98% (likely bot or broken). Homepage at 75% is warm Direct visitors leaving. Blog Direct at 91% is likely bots, not real readers.</li>
+        </ul>
+      </div>
     </div>
+
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>AI Visibility (AEO) · 154 prompts</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/aeo-dashboard.html">Live dashboard</a> · Replaced Searchable subscription, $1.4K/yr saved</div>
+      </div>
+      <img src="assets/aeo-dashboard.png" alt="AEO Dashboard: 47.4% combined mention rate, 8 wins, 12 opportunities, 154 prompts measured. Per engine: Perplexity 32.5%, OpenAI 24.0%, Gemini 24.7%." />
+      <div class="analysis">
+        <ul>
+          <li><strong>47.4% combined mention rate</strong> across 154 prompts, 9 engines. Last run Apr 26. Self-managed monitor went live this week, replacing a $1.5K/yr Searchable subscription.</li>
+          <li class="win"><strong>8 wins:</strong> Cobalt cited in best-of state-API lists, US-side-of-state-API queries, US-state-API for business verification, and similar mid-funnel queries.</li>
+          <li class="fix"><strong>12 gaps:</strong> Top zero-mention prompts (P300, P301, P302) drive ~6.2K combined LLM sessions but get 0% AI citation. Closing them is the next 50-state Business Entity Status pillar page.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>Beyond Banks Newsletter</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/newsletter-kpi-dashboard.html">Live dashboard</a> · 87 editions, latest Apr 30</div>
+      </div>
+      <img src="assets/newsletter-kpi-dashboard.png" alt="Newsletter KPI Dashboard: Latest Unique Opens 278 (-10.3% vs prior), Latest Open Rate 46.6% (-10.2% vs prior), Avg Unique Opens 289, Avg Open Rate 52.7% across 87 editions, Peak edition 370 on Mar 17, 2026." />
+      <div class="analysis">
+        <ul>
+          <li><strong>Latest:</strong> 278 unique opens, 46.6% open rate. Avg across 87 editions: 289 opens, 52.7% open rate. Peak: 370 opens on the Mar 17 edition.</li>
+          <li class="fix"><strong>Latest is below average:</strong> -10.3% on opens and -10.2% on open rate vs prior edition. Trend chart shows a soft April overall.</li>
+          <li><strong>This week:</strong> 3 editions shipped (Apr 25 Pioneer/Targeted Lending, Apr 28 Treasury CDFI, Apr 30 Aliya Sports + All Pro). Open data for the latest 2 will mature next week.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>YouTube · 501 videos in window</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/youtube-kpi-dashboard.html">Live dashboard</a> · 211 Shorts + 290 long-form, Jan 2025 to Mar 2026</div>
+      </div>
+      <img src="assets/youtube-kpi-dashboard.png" alt="YouTube KPI Dashboard: 14 new subscribers (+40%), 13 unsubscribes (-31.6%), 27 likes (-48.1%), 4.9K views (-8.1%), 839 watch hours, 4 shares (-73.3%) for Mar 2026 vs Feb 2026." />
+      <div class="analysis">
+        <ul>
+          <li><strong>Mar 2026 month:</strong> 14 new subs (+40% vs Feb), 4.9K views (-8.1%), 839 watch hours, 27 likes (-48.1%).</li>
+          <li class="win"><strong>Subscriber growth accelerating</strong> while unsubscribes are down 31.6%. Net subscriber motion is the right direction.</li>
+          <li class="fix"><strong>Engagement softening:</strong> Likes -48% and shares -73% month over month. Worth checking whether the 10 new Shorts shipped this week (rows 31 to 40) move that line in May data.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>Trial → Customer · Close CRM pipeline</h3>
+        <div class="src"><a href="https://staging.cobaltintelligence.com/lp/trials/">Live dashboard (password)</a> · Data as of Apr 24</div>
+      </div>
+      <img src="assets/trial-conversion.png" alt="Trial-to-Customer Dashboard: 0% conversion last 90 days (0 of 280 trials), 178 avg days to convert historical, 1,453 active trials now, 1,215 at risk." />
+      <div class="analysis">
+        <ul>
+          <li><strong>1.5K active trials</strong> in Trial or Paid Pilot status now. Conversion funnel last 365d: 260 Potential, 205 Demo, 1.4K Trial, 24 Paid Pilot, 142 Customer, 30 Lost.</li>
+          <li class="fix"><strong>0% conversion last 90d</strong> (0 of 280 trials). Avg days to convert historically is 178, so the 90d window is too short to flag a real regression, but worth watching.</li>
+          <li class="fix"><strong>1.2K at risk</strong> (expiring within 7 days or usage declining). This is the largest single retention surface across all 6 dashboards.</li>
+        </ul>
+      </div>
+    </div>
+
   </section>
 
   <footer class="meta-footer">
-    <div>Generated May 1, 2026 · Cobalt Intelligence weekly status. Source: Slack-verified URLs.</div>
+    <div>Generated May 1, 2026 · Source: Slack-verified URLs + dashboard live snapshots.</div>
     <div>Repo: <a href="https://github.com/cobaltshela/cobalt-weekly-status">github.com/cobaltshela/cobalt-weekly-status</a></div>
   </footer>
 
