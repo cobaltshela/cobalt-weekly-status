@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cobalt Intelligence · Weekly Status · Week of Apr 25 to May 1, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0F172A; --slate: #1E293B; --blue: #0047AB; --blue-light: #2563C8;
+    --bg: #F8FAFC; --card: #FFFFFF; --text: #0F172A; --muted: #64748B;
+    --border: #E2E8F0; --green: #059669; --green-bg: #D1FAE5;
+    --amber: #D97706; --amber-bg: #FEF3C7; --red: #DC2626; --red-bg: #FEE2E2;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; line-height: 1.55; }
+  h1, h2, h3, h4 { font-family: "Sora", "Inter", sans-serif; letter-spacing: -0.01em; }
+  header.hero { background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 50%, var(--blue) 100%);
+    color: white; padding: 32px 44px; }
+  header.hero .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; margin-bottom: 6px; }
+  header.hero h1 { margin: 0 0 6px; font-size: 24px; font-weight: 600; }
+  header.hero .sub { font-size: 13.5px; opacity: 0.85; }
+  header.hero .meta { margin-top: 12px; font-size: 12.5px; display: flex; gap: 22px; flex-wrap: wrap; opacity: 0.92; }
+  header.hero .meta strong { font-weight: 600; }
+
+  main { max-width: 980px; margin: 0 auto; padding: 28px 36px 64px; }
+
+  .lede {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 22px; margin-bottom: 24px; font-size: 14px; color: var(--slate);
+  }
+  .lede strong { color: var(--navy); font-weight: 600; }
+
+  section.module { margin-top: 28px; }
+  section.module > h2 {
+    font-size: 18px; color: var(--navy); margin: 0 0 14px;
+    padding-bottom: 6px; border-bottom: 2px solid var(--blue); display: inline-block;
+  }
+  section.module.in-progress > h2 { border-bottom-color: var(--amber); }
+
+  .group {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 22px; margin-bottom: 12px;
+  }
+  .group h3 {
+    font-size: 14px; color: var(--navy); margin: 0 0 10px;
+    font-weight: 600; display: flex; align-items: center; gap: 8px;
+  }
+  .group h3 .pill {
+    font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+    letter-spacing: 0.05em; text-transform: uppercase; color: var(--green); background: var(--green-bg);
+  }
+  .in-progress .group h3 .pill { color: var(--amber); background: var(--amber-bg); }
+  .group ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--slate); line-height: 1.65; }
+  .group ul li { margin-bottom: 4px; }
+  .group ul li strong { color: var(--navy); font-weight: 600; }
+  .group ul li code { background: #F1F5F9; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
+  .group ul li a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(0,71,171,0.25); }
+  .group ul li a:hover { border-bottom-color: var(--blue); }
+  .group .source-line { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
+  .group .source-line a { color: var(--blue); text-decoration: none; }
+
+  .dash-card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    overflow: hidden; margin-bottom: 18px;
+  }
+  .dash-card .dash-head { padding: 12px 20px 10px; border-bottom: 1px solid var(--border); }
+  .dash-card .dash-head h3 { margin: 0 0 3px; font-size: 14px; color: var(--navy); font-weight: 600; }
+  .dash-card .dash-head .src { font-size: 11.5px; color: var(--muted); }
+  .dash-card .dash-head .src a { color: var(--blue); text-decoration: none; }
+  .dash-card img { display: block; width: 100%; height: auto; }
+  .dash-card .analysis { padding: 12px 22px 14px; background: #FAFBFC; border-top: 1px solid var(--border); }
+  .dash-card .analysis ul { margin: 0; padding-left: 18px; font-size: 13px; color: var(--slate); line-height: 1.6; }
+  .dash-card .analysis ul li { margin-bottom: 3px; }
+  .dash-card .analysis ul li strong { color: var(--navy); font-weight: 600; }
+  .dash-card .analysis ul li.win::marker { color: var(--green); }
+  .dash-card .analysis ul li.fix::marker { color: var(--red); }
+
+  footer.meta-footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--border);
+    font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  footer.meta-footer a { color: var(--blue); text-decoration: none; }
+
+  @media (max-width: 720px) {
+    main { padding: 20px 18px 52px; }
+    header.hero { padding: 26px 22px; }
+    header.hero h1 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="eyebrow">Cobalt Intelligence · Weekly Status</div>
+  <h1>Week of April 25 to May 1, 2026</h1>
+  <div class="sub">What got done, what's in progress, current dashboard state.</div>
+  <div class="meta">
+    <span><strong>For:</strong> Jordan</span>
+    <span><strong>From:</strong> Shela</span>
+    <span><strong>Period:</strong> Apr 25 to May 1, 2026</span>
+    <span><strong>Generated:</strong> May 1, 2026</span>
+  </div>
+</header>
+
+<main>
+
+  <div class="lede">
+    Big infrastructure week: <strong>Close API now wired to the trial dashboard</strong>, security hardened to OWASP-grade encryption, and the <strong>Searchable subscription canceled</strong> in favor of a self-hosted AEO monitor (~$1.4K/yr saved). Working Planet onboarded. Broker Fair prep underway with Patricia. Idea Financial case study refresh in flight.
+  </div>
+
+  <section class="module">
+    <h2>Dashboard summary</h2>
+    <div class="group" style="margin-bottom: 0;">
+      <ul>
+        <li><strong>Website Traffic</strong> is continuously going down due to the directory state entity page changes.</li>
+        <li><strong>Website Page Performance</strong> shows that the sessions decreased as expected, as did the bounce rate.</li>
+        <li><strong>Domain Rating</strong> is 37, no changes since last 7 days.</li>
+        <li><strong>AI Visibility</strong> 47.4% combined mention rate across 154 prompts, 9 engines.</li>
+        <li><strong>8 wins:</strong> Cobalt cited in best-of state-API lists, US-side-of-state-API queries, US-state-API for business verification.</li>
+        <li><strong>Newsletter</strong> has steady above 50% open rate.</li>
+        <li><strong>YouTube</strong> subscriber growth accelerating while unsubscribes are down 31.6%. Net subscriber motion is the right direction.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="module">
+    <h2>Completed this week</h2>
+
+    <div class="group">
+      <h3>Infrastructure &amp; Security <span class="pill">Done</span></h3>
+      <ul>
+        <li><strong>Close API connected to the trial dashboard.</strong> Live revenue, churn, and lead-stage data now flowing from Close CRM into the Sales Data Analytics Dashboard. No more manual report exports.</li>
+        <li><strong>Trial Dashboard security upgrade.</strong> Password rotated from <code>cobalt123</code> to a 24-char random string. Crypto upgraded to AES-256-GCM with PBKDF2-SHA256 at 600k iterations (OWASP 2023+ minimum). Cloudflare Access offered as the structural fix when Jordan has 30 minutes.</li>
+        <li><strong>1Password vault setup.</strong> New trial dashboard password shared via 1Password for Jordan's vault as "Cobalt Trial Dashboard staging." Same flow used for the Working Planet sales data dashboard share.</li>
+        <li><strong>Searchable subscription canceled.</strong> Self-hosted AEO monitor (Mon 7:10 AM cron) now running daily LLM citation checks across 154 prompts. Net savings ~$1.4K/yr after API costs. Baseline 47.4% combined mention rate captured.</li>
+      </ul>
+      <div class="source-line">
+        Sources:
+        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1777570771250599">#marketing May 1 (Close API)</a> ·
+        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1777484395185649">#marketing Apr 30 (security pass)</a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Working Planet onboarding <span class="pill">Done</span></h3>
+      <ul>
+        <li><strong>CRM walkthrough doc shipped.</strong> Close.io Lead Statuses, Lead Sources, How statuses change, Customer Identifiers across the funnel. Sent to the WP partner team Apr 30.</li>
+        <li><strong>Sales Data Analytics Dashboard access provisioned.</strong> Revenue + churn by account, with lead-attribution to creating account. 1Password share included.</li>
+        <li><strong>Clarifications sent.</strong> Webflow is for blogs only, not the main site. Working Planet team now self-serving lead and revenue data.</li>
+      </ul>
+      <div class="source-line">
+        Source: <a href="https://cobaltintelligence.slack.com/archives/C0B0DNX718A/p1777484097886029">#workingplanet-cobalt Apr 30</a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Website &amp; marketing <span class="pill">Done</span></h3>
+      <ul>
+        <li><strong>PR submitted</strong> (current cycle complete, future PR scoped with Jordan for the next round).</li>
+        <li><strong>SEO monitoring active.</strong> AEO baseline captured across 154 prompts, dashboard live at <a href="https://laladim.github.io/life-dashboard-site/aeo-dashboard.html">aeo-dashboard</a>. Refresh runs Monday mornings.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <section class="module in-progress">
+    <h2>In progress</h2>
+
+    <div class="group">
+      <h3>Broker Fair event preparation <span class="pill">In progress</span></h3>
+      <ul>
+        <li><strong>Pre-event outreach plan</strong> drafted for 10 to 20 named contacts at past Broker Fair sponsor companies. Three touches via Cobalt LinkedIn Business page (Patricia signs off on copy + her name as sender).</li>
+        <li><strong>50-State SoS Data Quality Report</strong> in production. Lead with a chapter as the value drop in outreach. Shela owns the report.</li>
+        <li><strong>Existing customer thank-you gifts:</strong> fountain pen with engraved name + 6-page bound brief carrying our 50-State SoS Data Quality Report + business cards + FAQ sheet. Bitty (huge name + existing customer) flagged for special meet-and-greet via Dan's monthly cadence.</li>
+        <li><strong>Cobalt merch options</strong> being narrowed with Patricia: small pouch bag, stainless steel tumbler, umbrella, travel pillow, or selfie stick / phone stand. Choosing on production speed + Patricia's carrying capacity.</li>
+        <li><strong>Awaiting attendee list</strong> from Broker Fair organizers (likely a few days before event).</li>
+      </ul>
+      <div class="source-line">
+        Source: <a href="https://cobaltintelligence.slack.com/archives/D095EK9FT7C/p1777446493779149">DM with Patricia Apr 29</a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Case studies <span class="pill">In progress</span></h3>
+      <ul>
+        <li><strong>Idea Financial case study refresh.</strong> Prior case study used Joe Salvatore's interview, but he is no longer with them. Refresh is timely.</li>
+        <li><strong>Questionnaire drafted</strong> with answer-aid options: volume range (was 5K-10K loan apps/month two years ago), how they would describe Cobalt's role today (3 framing options), underwriter time freed (5 ranges + write-in), time-to-fund changes since 2024.</li>
+        <li><strong>Open question:</strong> who will fill out the questionnaire, and whether it should be anonymized like the Persona case study.</li>
+      </ul>
+      <div class="source-line">
+        Source: <a href="https://cobaltintelligence.slack.com/archives/D095EK9FT7C/p1777479397751199">DM with Patricia Apr 30</a>
+      </div>
+    </div>
+
+    <div class="group">
+      <h3>Content &amp; website <span class="pill">In progress</span></h3>
+      <ul>
+        <li><strong>Cobalt CLI blog post.</strong> Shela drafting and placing in the resources section.</li>
+        <li><strong>Website refinements + CTA changes.</strong> Document reviewed with Jordan via call Apr 29. Working Planet alignment also covered.</li>
+      </ul>
+      <div class="source-line">
+        Sources:
+        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1777578888086799">#marketing May 1 (CLI blog)</a> ·
+        <a href="https://cobaltintelligence.slack.com/archives/D05UDGK6JBD/p1777461565205699">DM with Jordan Apr 29 (refinements)</a>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="module">
+    <h2>Standing dashboards</h2>
+
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>SEO KPI · year-to-date</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/seo-kpi-dashboard.html">Live dashboard</a> · Ahrefs DR + GA4 weekly + monthly</div>
+      </div>
+      <img src="assets/seo-kpi-dashboard.png" alt="SEO KPI Dashboard year-to-date: Domain Rating 37, 26.9K total users, 23.9K new users, 28.5K sessions, 29.7K page views, 3 booked calls, 31 created accounts, with 4 trend charts and full monthly data table from Jan 2025 to present." />
+    </div>
+
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>Traffic Insights · last 7 days</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/traffic-insights.html">Live dashboard</a> · GA4 weekly + monthly</div>
+      </div>
+      <img src="assets/traffic-insights.png" alt="Traffic Insights last 7 days: 768 sessions, /(homepage) 335 sessions, 8 AI search clicks, Organic Search best blog channel." />
+    </div>
+
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>AI Visibility (AEO) · 154 prompts</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/aeo-dashboard.html">Live dashboard</a> · Replaced Searchable, $1.4K/yr saved</div>
+      </div>
+      <img src="assets/aeo-dashboard.png" alt="AEO Dashboard: 47.4% combined mention rate, 8 wins, 12 opportunities, 154 prompts measured. Per engine: Perplexity 32.5%, OpenAI 24.0%, Gemini 24.7%." />
+    </div>
+
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>Beyond Banks Newsletter</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/newsletter-kpi-dashboard.html">Live dashboard</a> · 87 editions, latest Apr 30</div>
+      </div>
+      <img src="assets/newsletter-kpi-dashboard.png" alt="Newsletter KPI Dashboard: Latest Unique Opens 278 (-10.3% vs prior), Latest Open Rate 46.6% (-10.2% vs prior), Avg Unique Opens 289, Avg Open Rate 52.7% across 87 editions, Peak edition 370 on Mar 17, 2026." />
+    </div>
+
+    <div class="dash-card">
+      <div class="dash-head">
+        <h3>YouTube · 501 videos in window</h3>
+        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/youtube-kpi-dashboard.html">Live dashboard</a> · 211 Shorts + 290 long-form, Jan 2025 to Mar 2026</div>
+      </div>
+      <img src="assets/youtube-kpi-dashboard.png" alt="YouTube KPI Dashboard: 14 new subscribers (+40%), 13 unsubscribes (-31.6%), 27 likes (-48.1%), 4.9K views (-8.1%), 839 watch hours, 4 shares (-73.3%) for Mar 2026 vs Feb 2026." />
+    </div>
+
+  </section>
+
+  <footer class="meta-footer">
+    <div>Generated May 1, 2026 · Source: Slack conversations + dashboard live snapshots.</div>
+    <div>Repo: <a href="https://github.com/cobaltshela/cobalt-weekly-status">github.com/cobaltshela/cobalt-weekly-status</a></div>
+  </footer>
+
+</main>
+
+</body>
+</html>
