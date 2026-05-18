@@ -26,6 +26,20 @@
 
   main { max-width: 980px; margin: 0 auto; padding: 28px 36px 64px; }
 
+  .report-actions {
+    max-width: 980px; margin: 0 auto; padding: 18px 36px 0;
+    display: flex; justify-content: flex-end;
+  }
+  .pdf-button {
+    appearance: none; border: 1px solid rgba(15, 23, 42, 0.14); border-radius: 8px;
+    background: var(--blue); color: #F8FAFC; cursor: pointer; display: inline-flex;
+    align-items: center; gap: 8px; font: 700 13px/1 "Inter", sans-serif;
+    padding: 11px 14px; text-decoration: none; box-shadow: 0 8px 18px rgba(0, 71, 171, 0.18);
+  }
+  .pdf-button:hover { background: var(--blue-light); }
+  .pdf-button:focus-visible { outline: 3px solid rgba(37, 99, 200, 0.28); outline-offset: 3px; }
+  .pdf-button svg { width: 16px; height: 16px; flex: 0 0 auto; }
+
   .lede {
     background: var(--card); border: 1px solid var(--border); border-radius: 10px;
     padding: 16px 22px; margin-bottom: 24px; font-size: 14px; color: var(--slate);
@@ -77,8 +91,44 @@
 
   @media (max-width: 720px) {
     main { padding: 20px 18px 52px; }
+    .report-actions { padding: 16px 18px 0; }
+    .pdf-button { width: 100%; justify-content: center; }
     header.hero { padding: 26px 22px; }
     header.hero h1 { font-size: 20px; }
+  }
+
+  @media print {
+    @page { margin: 0.45in; background-color: #EEF2F7; }
+    html, body { background: #EEF2F7; }
+    body::before {
+      content: ""; position: fixed; top: -1in; right: -1in; bottom: -1in; left: -1in; z-index: 0;
+      background: #EEF2F7;
+    }
+    body::after {
+      content: ""; position: fixed; top: -1in; right: -1in; bottom: -1in; left: -1in; z-index: 2;
+      background: rgba(15, 23, 42, 0.025);
+    }
+    header.hero, main { position: relative; z-index: 1; }
+    header.hero { padding: 24px 34px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+    header.hero h1 { font-size: 22px; }
+    header.hero .meta { margin-top: 8px; }
+    .report-actions { display: none; }
+    main { padding: 16px 0 0; max-width: none; }
+    .lede { padding: 13px 18px; margin-bottom: 16px; font-size: 12.5px; line-height: 1.48; }
+    section.module { margin-top: 18px; }
+    section.module > h2 { font-size: 16px; margin-bottom: 10px; }
+    .group { padding: 13px 18px; margin-bottom: 10px; }
+    .group h3 { font-size: 13px; margin-bottom: 8px; }
+    .group ul { font-size: 12px; line-height: 1.48; }
+    .group .source-line { font-size: 10.5px; }
+    .group, .lede, .dash-card .dash-head { break-inside: avoid; }
+    .dash-card { break-inside: avoid; page-break-inside: avoid; }
+    .dash-card img {
+      width: auto; max-width: 100%; max-height: 7.7in; margin: 0 auto;
+      object-fit: contain; object-position: top center;
+    }
+    footer.meta-footer { display: none; }
+    a { color: var(--blue); }
   }
 </style>
 </head>
@@ -95,6 +145,17 @@
     <span><strong>Generated:</strong> May 14, 2026</span>
   </div>
 </header>
+
+<div class="report-actions" aria-label="Report actions">
+  <a class="pdf-button" href="weekly-status-jordan-2026-05-07-to-2026-05-13.pdf" download>
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+      <path d="M7 10l5 5 5-5" />
+      <path d="M12 15V3" />
+    </svg>
+    Save as PDF
+  </a>
+</div>
 
 <main>
 
