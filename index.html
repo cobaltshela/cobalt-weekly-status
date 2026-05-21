@@ -1,307 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cobalt Intelligence · Weekly Status · Week of May 7 to May 13, 2026</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cobalt Intelligence Weekly Status, Week of May 14 to May 20, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --navy: #0F172A; --slate: #1E293B; --blue: #0047AB; --blue-light: #2563C8;
-    --bg: #F8FAFC; --card: #FFFFFF; --text: #0F172A; --muted: #64748B;
-    --border: #E2E8F0; --green: #059669; --green-bg: #D1FAE5;
-    --amber: #D97706; --amber-bg: #FEF3C7; --red: #DC2626; --red-bg: #FEE2E2;
-  }
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; line-height: 1.55; }
-  h1, h2, h3, h4 { font-family: "Sora", "Inter", sans-serif; letter-spacing: -0.01em; }
-  header.hero { background: linear-gradient(135deg, var(--navy) 0%, var(--slate) 50%, var(--blue) 100%);
-    color: white; padding: 32px 44px; }
-  header.hero .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; margin-bottom: 6px; }
-  header.hero h1 { margin: 0 0 6px; font-size: 24px; font-weight: 600; }
-  header.hero .sub { font-size: 13.5px; opacity: 0.85; }
-  header.hero .meta { margin-top: 12px; font-size: 12.5px; display: flex; gap: 22px; flex-wrap: wrap; opacity: 0.92; }
-  header.hero .meta strong { font-weight: 600; }
-
-  main { max-width: 980px; margin: 0 auto; padding: 28px 36px 64px; }
-
-  .report-actions {
-    max-width: 980px; margin: 0 auto; padding: 18px 36px 0;
-    display: flex; justify-content: flex-end;
-  }
-  .pdf-button {
-    appearance: none; border: 1px solid rgba(15, 23, 42, 0.14); border-radius: 8px;
-    background: var(--blue); color: #F8FAFC; cursor: pointer; display: inline-flex;
-    align-items: center; gap: 8px; font: 700 13px/1 "Inter", sans-serif;
-    padding: 11px 14px; text-decoration: none; box-shadow: 0 8px 18px rgba(0, 71, 171, 0.18);
-  }
-  .pdf-button:hover { background: var(--blue-light); }
-  .pdf-button:focus-visible { outline: 3px solid rgba(37, 99, 200, 0.28); outline-offset: 3px; }
-  .pdf-button svg { width: 16px; height: 16px; flex: 0 0 auto; }
-
-  .lede {
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    padding: 16px 22px; margin-bottom: 24px; font-size: 14px; color: var(--slate);
-  }
-  .lede strong { color: var(--navy); font-weight: 600; }
-
-  section.module { margin-top: 28px; }
-  section.module > h2 {
-    font-size: 18px; color: var(--navy); margin: 0 0 14px;
-    padding-bottom: 6px; border-bottom: 2px solid var(--blue); display: inline-block;
-  }
-  section.module.in-progress > h2 { border-bottom-color: var(--amber); }
-
-  .group {
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    padding: 16px 22px; margin-bottom: 12px;
-  }
-  .group h3 {
-    font-size: 14px; color: var(--navy); margin: 0 0 10px;
-    font-weight: 600; display: flex; align-items: center; gap: 8px;
-  }
-  .group h3 .pill {
-    font-size: 10.5px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
-    letter-spacing: 0.05em; text-transform: uppercase; color: var(--green); background: var(--green-bg);
-  }
-  .in-progress .group h3 .pill { color: var(--amber); background: var(--amber-bg); }
-  .group ul { margin: 0; padding-left: 20px; font-size: 13px; color: var(--slate); line-height: 1.65; }
-  .group ul li { margin-bottom: 4px; }
-  .group ul li strong { color: var(--navy); font-weight: 600; }
-  .group ul li code { background: #F1F5F9; padding: 1px 5px; border-radius: 3px; font-size: 12px; }
-  .group ul li a { color: var(--blue); text-decoration: none; border-bottom: 1px solid rgba(0,71,171,0.25); }
-  .group ul li a:hover { border-bottom-color: var(--blue); }
-  .group .source-line { font-size: 11.5px; color: var(--muted); margin-top: 8px; }
-  .group .source-line a { color: var(--blue); text-decoration: none; }
-
-  .dash-card {
-    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
-    overflow: hidden; margin-bottom: 18px;
-  }
-  .dash-card .dash-head { padding: 12px 20px 10px; border-bottom: 1px solid var(--border); }
-  .dash-card .dash-head h3 { margin: 0 0 3px; font-size: 14px; color: var(--navy); font-weight: 600; }
-  .dash-card .dash-head .src { font-size: 11.5px; color: var(--muted); }
-  .dash-card .dash-head .src a { color: var(--blue); text-decoration: none; }
-  .dash-card img { display: block; width: 100%; height: auto; }
-
-  footer.meta-footer { margin-top: 36px; padding-top: 18px; border-top: 1px solid var(--border);
-    font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-  footer.meta-footer a { color: var(--blue); text-decoration: none; }
-
-  @media (max-width: 720px) {
-    main { padding: 20px 18px 52px; }
-    .report-actions { padding: 16px 18px 0; }
-    .pdf-button { width: 100%; justify-content: center; }
-    header.hero { padding: 26px 22px; }
-    header.hero h1 { font-size: 20px; }
-  }
-
-  @media print {
-    @page { margin: 0.45in; background-color: #EEF2F7; }
-    html, body { background: #EEF2F7; }
-    body::before {
-      content: ""; position: fixed; top: -1in; right: -1in; bottom: -1in; left: -1in; z-index: 0;
-      background: #EEF2F7;
-    }
-    body::after {
-      content: ""; position: fixed; top: -1in; right: -1in; bottom: -1in; left: -1in; z-index: 2;
-      background: rgba(15, 23, 42, 0.025);
-    }
-    header.hero, main { position: relative; z-index: 1; }
-    header.hero { padding: 24px 34px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-    header.hero h1 { font-size: 22px; }
-    header.hero .meta { margin-top: 8px; }
-    .report-actions { display: none; }
-    main { padding: 16px 0 0; max-width: none; }
-    .lede { padding: 13px 18px; margin-bottom: 16px; font-size: 12.5px; line-height: 1.48; }
-    section.module { margin-top: 18px; }
-    section.module > h2 { font-size: 16px; margin-bottom: 10px; }
-    .group { padding: 13px 18px; margin-bottom: 10px; }
-    .group h3 { font-size: 13px; margin-bottom: 8px; }
-    .group ul { font-size: 12px; line-height: 1.48; }
-    .group .source-line { font-size: 10.5px; }
-    .group, .lede, .dash-card .dash-head { break-inside: avoid; }
-    .dash-card { break-inside: avoid; page-break-inside: avoid; }
-    .dash-card img {
-      width: auto; max-width: 100%; max-height: 7.7in; margin: 0 auto;
-      object-fit: contain; object-position: top center;
-    }
-    footer.meta-footer { display: none; }
-    a { color: var(--blue); }
-  }
+:root {
+  --navy:#0F172A; --slate:#1E293B; --blue:#0047AB; --blue-light:#2563C8;
+  --bg:#F8FAFC; --card:#F8FAFC; --text:#0F172A; --muted:#64748B;
+  --border:#E2E8F0; --green:#059669; --green-bg:#D1FAE5;
+  --amber:#D97706; --amber-bg:#FEF3C7;
+}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55} h1,h2,h3{font-family:Sora,Inter,sans-serif;letter-spacing:0} header.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--slate) 55%,var(--blue) 100%);color:white;padding:32px 44px} header.hero .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.78;margin-bottom:6px} header.hero h1{margin:0 0 6px;font-size:24px;font-weight:600} header.hero .sub{font-size:13.5px;opacity:.86} header.hero .meta{margin-top:12px;font-size:12.5px;display:flex;gap:22px;flex-wrap:wrap;opacity:.92} main{max-width:980px;margin:0 auto;padding:28px 36px 64px}.report-actions{max-width:980px;margin:0 auto;padding:18px 36px 0;display:flex;justify-content:flex-end}.pdf-button{border:1px solid rgba(15,23,42,.14);border-radius:8px;background:var(--blue);color:#F8FAFC;display:inline-flex;align-items:center;gap:8px;font:700 13px/1 Inter,sans-serif;padding:11px 14px;text-decoration:none;box-shadow:0 8px 18px rgba(0,71,171,.18)}.pdf-button:hover{background:var(--blue-light)}.lede,.group{background:var(--card);border:1px solid var(--border);border-radius:10px}.lede{padding:16px 22px;margin-bottom:24px;font-size:14px;color:var(--slate)}.lede strong{color:var(--navy)}section.module{margin-top:28px}section.module>h2{font-size:18px;color:var(--navy);margin:0 0 14px;padding-bottom:6px;border-bottom:2px solid var(--blue);display:inline-block}.group{padding:16px 22px;margin-bottom:12px}.group h3{font-size:14px;color:var(--navy);margin:0 0 10px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;color:var(--green);background:var(--green-bg)}.pill.amber{color:var(--amber);background:var(--amber-bg)}ul{margin:0;padding-left:20px;font-size:13px;color:var(--slate);line-height:1.65}li{margin-bottom:4px}li strong{color:var(--navy)}a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(0,71,171,.25)}a:hover{border-bottom-color:var(--blue)}.source-line{font-size:11.5px;color:var(--muted);margin-top:8px}.dash-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:18px}.dash-head{padding:12px 20px 10px;border-bottom:1px solid var(--border)}.dash-head h3{margin:0 0 3px;font-size:14px;color:var(--navy)}.dash-head .src{font-size:11.5px;color:var(--muted)}.dash-card img{display:block;width:100%;height:auto;filter:brightness(0.985)}footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}@media screen and (max-width:720px){main{padding:20px 18px 52px}.report-actions{padding:16px 18px 0}.pdf-button{width:100%;justify-content:center}header.hero{padding:26px 22px}header.hero h1{font-size:20px}}@media print{@page{margin:.45in;background-color:#EEF2F7}html,body{background:#EEF2F7}.report-actions{display:none}header.hero{padding:24px 34px}main{padding:16px 0 0;max-width:none}.lede{padding:13px 18px;margin-bottom:16px;font-size:12.5px;line-height:1.48}section.module{margin-top:18px}section.module>h2{font-size:16px;margin-bottom:10px}.group{padding:13px 18px;margin-bottom:10px}.group h3{font-size:13px;margin-bottom:8px}ul{font-size:12px;line-height:1.48}.source-line{font-size:10.5px}.group,.lede,.dash-head{break-inside:avoid}.dash-card{break-inside:avoid;page-break-inside:avoid}.dash-card img{width:auto;max-width:100%;max-height:7.7in;margin:0 auto;object-fit:contain;object-position:top center}footer{display:none}}
 </style>
 </head>
 <body>
-
 <header class="hero">
-  <div class="eyebrow">Cobalt Intelligence · Weekly Status</div>
-  <h1>Week of May 7 to May 13, 2026</h1>
-  <div class="sub">What got done, what's in progress, current dashboard state.</div>
+  <div class="eyebrow">Cobalt Intelligence Weekly Status</div>
+  <h1>Week of May 14 to May 20, 2026</h1>
+  <div class="sub">What got done, what is in progress, and the current dashboard state.</div>
   <div class="meta">
     <span><strong>For:</strong> Jordan</span>
     <span><strong>From:</strong> Shela</span>
-    <span><strong>Period:</strong> May 7 to May 13, 2026</span>
-    <span><strong>Generated:</strong> May 14, 2026</span>
+    <span><strong>Period:</strong> May 14 to May 20, 2026</span>
+    <span><strong>Generated:</strong> May 21, 2026</span>
   </div>
 </header>
-
-<div class="report-actions" aria-label="Report actions">
-  <a class="pdf-button" href="weekly-status-jordan-2026-05-07-to-2026-05-13.pdf" download>
-    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-      <path d="M7 10l5 5 5-5" />
-      <path d="M12 15V3" />
-    </svg>
-    Save as PDF
-  </a>
-</div>
-
+<div class="report-actions" aria-label="Report actions"><a class="pdf-button" href="weekly-status-jordan-2026-05-14-to-2026-05-20.pdf" download>Save as PDF</a></div>
 <main>
-
   <div class="lede">
-    Traffic recovery week. <strong>Website traffic rebounded to 17,101 users</strong> versus 12,044 prior week, +42%, reversing the prior two weeks of compression. <strong>Conversions held steady</strong> at 8 booked calls and 26 created accounts on the larger traffic base. <strong>Cobalt CLI <code>fv status</code> bug shipped end-to-end</strong>: bug filed Tuesday, Jordan published v0.4.1 Thursday, blog tutorial swapped back to the standard flow. <strong>Broker Fair SOS Reliability Index approved by Jordan</strong> ("Ship it"). <strong>Working Planet partner onboarding invitation dispatched.</strong> GTM container access path for Market Acumen Kent handed off to Jordan for the app domain container.
+    Biggest signal this week: <strong>traffic spiked to 87.7K users</strong> for May 14 to May 20, up from 17.1K the prior week, with <strong>90.1K sessions</strong>, <strong>118.0K views</strong>, <strong>16 booked calls</strong>, and <strong>33 created accounts</strong>. On the work side, the four-post TIN/EIN batch is live, Cobalt CLI video assets and product audit are ready, Working Planet launch expectations are framed, and the SWAHG job-board system has a stricter source and QA foundation.
   </div>
 
   <section class="module">
-    <h2>Dashboard summary</h2>
-    <div class="group" style="margin-bottom: 0;">
+    <h2>Dashboard Summary</h2>
+    <div class="group">
       <ul>
-        <li><strong>Website Traffic</strong> recovered to 17,101 total users this week (May 7 to May 13) vs 12,044 the prior week. Net positive delta of +5,057 users week over week.</li>
-        <li><strong>Conversions</strong> held at the higher absolute level. 8 booked calls (flat), 26 created accounts (vs 28 prior). CTA refinements continue to support the steady-state.</li>
-        <li><strong>Bounce Rate</strong> 74.1%, up from 68.4% prior week. Likely volatility on the larger traffic base, worth watching next week before reading as a trend.</li>
-        <li><strong>Domain Rating</strong> OpenPageRank 3.27 (integer 3), no change since last refresh. Tracker remains on the post-Ahrefs scale.</li>
-        <li><strong>AI Visibility</strong> 47.4% combined mention rate baseline across 154 prompts and 9 engines, no change.</li>
-        <li><strong>Newsletter</strong> open rate trend steady, latest Beyond Banks editions tracking above 50%.</li>
-        <li><strong>YouTube</strong> subscriber motion and engagement holding, no trend break vs prior month.</li>
+        <li><strong>Website Traffic</strong> jumped to 87.7K total users, 90.1K sessions, and 118.0K views. This is a +70.4K user delta versus the prior completed week.</li>
+        <li><strong>Conversions</strong> improved with the larger traffic base: 16 booked calls and 33 created accounts, compared with 8 and 26 last week.</li>
+        <li><strong>Bounce Rate</strong> improved to 55.95%, down from 74.14% last week. Better traffic quality, page mix, or campaign mix may be contributing.</li>
+        <li><strong>Domain Rating</strong> remains on the OpenPageRank scale at 3.27, integer 3, checked May 21.</li>
+        <li><strong>AI Visibility</strong> baseline remains 46.8% combined mention rate across 154 prompts, with 72 prompts cited by at least one engine.</li>
+        <li><strong>Newsletter</strong> data is current through Apr 30, with the latest tracked edition at 46.64% open rate and 278 unique opens.</li>
+        <li><strong>YouTube</strong> dashboard is current through the Apr 23 export: March had 4,876 views, 14 new subscribers, 13 unsubscribes, and +1 net subscribers.</li>
       </ul>
     </div>
   </section>
 
   <section class="module">
-    <h2>Completed this week</h2>
-
+    <h2>Completed This Week</h2>
     <div class="group">
-      <h3>Cobalt CLI v0.4.1 bug fix shipped end-to-end <span class="pill">Done</span></h3>
+      <h3>TIN/EIN blog batch published <span class="pill">Done</span></h3>
       <ul>
-        <li><strong>Bug filed Tuesday May 13</strong> on #marketing thread: <code>cobalt fv status</code> returned "action is required" on v0.4.0 even though <code>cobalt fv start</code> worked. Customer could trigger a paid full verification but not retrieve the result through the documented status command.</li>
-        <li><strong>Jordan published v0.4.1 to npm Thursday May 14.</strong> Retested: <code>cobalt fv status &lt;searchGuid&gt;</code> now returns a clean JSON envelope. Bug resolved.</li>
-        <li><strong>Blog tutorial swapped back to the standard <code>fv status</code> flow.</strong> Live at <a href="https://blog.cobaltintelligence.com/post/how-to-use-cobalt-cli">blog.cobaltintelligence.com/post/how-to-use-cobalt-cli</a>. The tutorial now teaches the recommended path again instead of the webhook-only workaround.</li>
+        <li><strong>Four Cobalt posts are live</strong>: EIN first-step, state-by-state EIN gaps, EIN vs TIN, and TIN matching for IRS B-notice prevention.</li>
+        <li><strong>Publish QA passed</strong>: live pages returned HTTP 200, H1s matched, hero sections rendered, FAQ sections rendered, and tables displayed correctly.</li>
+        <li><strong>Tracking was updated</strong>: the Blog Content Database and Master Blog Inventory were read back with Published status and Webflow IDs.</li>
       </ul>
-      <div class="source-line">
-        Sources:
-        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1778672822305439">#marketing May 13 (bug filed)</a> ·
-        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1778727237026249">#marketing May 14 (retest on v0.4.0)</a> ·
-        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1778727465162159">#marketing May 14 (v0.4.1 confirmed working)</a>
-      </div>
+      <div class="source-line">Sources: <a href="https://blog.cobaltintelligence.com/post/ein-verify-your-first-step-to-fraud-proof-lending">EIN first-step</a> | <a href="https://blog.cobaltintelligence.com/post/state-by-state-ein-verification-where-the-irs-doesn-t-reach">state-by-state EIN</a> | <a href="https://blog.cobaltintelligence.com/post/ein-vs-tin-for-fintech-underwriting-when-each-applies">EIN vs TIN</a> | <a href="https://blog.cobaltintelligence.com/post/tin-matching-for-irs-b-notice-prevention">TIN matching</a></div>
     </div>
 
     <div class="group">
-      <h3>Broker Fair SOS Reliability Index approved <span class="pill">Done</span></h3>
+      <h3>Cobalt CLI video assets and product audit prepared <span class="pill">Done</span></h3>
       <ul>
-        <li><strong>Revised report submitted to Jordan May 11</strong> for sign-off. First push missed the actual content changes, re-pushed May 13 with the correct version.</li>
-        <li><strong>Jordan approval:</strong> "Yes, love this. Ship it." Live at <a href="https://cobalt-intelligence.github.io/reports/broker-fair/sos-reliability-index.html">cobalt-intelligence.github.io/reports/broker-fair/sos-reliability-index.html</a>.</li>
-        <li><strong>QR codes verified</strong> to survive future report edits, confirmed with Patricia for the merch print run.</li>
+        <li><strong>Seven terminal-style feature demos were rendered</strong> for auth, config, SOS, OFAC, TIN, full verification, and limits.</li>
+        <li><strong>Safe live CLI checks were run</strong> before the videos were judged: help surfaces, auth, config, SOS test mode, pending jobs, OFAC, TIN, full verification, and limits.</li>
+        <li><strong>Product audit found no catastrophic falsehoods</strong>, but recommends tightening screenshot, UCC, OFAC, TIN, and full-verification wording before public publishing.</li>
       </ul>
-      <div class="source-line">
-        Sources:
-        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1778510669213769">#marketing May 11 (revised report submitted)</a> ·
-        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1778645554845729">#marketing May 13 (correct version live)</a> ·
-        <a href="https://cobaltintelligence.slack.com/archives/D095EK9FT7C/p1778510805989669">DM Patricia May 11 (QR codes verified)</a>
-      </div>
+      <div class="source-line">Status: assets and audit are ready for Jordan review before publishing.</div>
     </div>
 
     <div class="group">
-      <h3>GTM container access handoff for Market Acumen <span class="pill">Done</span></h3>
+      <h3>Working Planet launch analysis prepared <span class="pill">Done</span></h3>
       <ul>
-        <li><strong>Identified the second GTM container</strong> Kent needs: <code>GTM-KC5XH8LP</code> is tied to <code>app.cobaltintelligence.com</code> and sits under Jordan's account, not Shela's. <code>GTM-KQD7J4K6</code> (main site) is already done.</li>
-        <li><strong>8-step procedure handed to Jordan</strong> for adding <code>tagmanager@clients.marketacumen.com</code> with Publish role on the app container, so ConversionRuler can split tag coverage across both surfaces.</li>
-        <li>Working Planet acknowledged the late reply and confirmed the next invitation was sent.</li>
+        <li><strong>The paid marketing workbook was reviewed</strong> against prior Working Planet context, CTA tracking work, and the asset-gathering package.</li>
+        <li><strong>Key read</strong>: the proposed $30K monthly budget is closer to early pipeline learning than realized-MRR proof because of Cobalt's sales latency.</li>
+        <li><strong>Expected deliverables are now framed</strong>: tracking map, campaign architecture, creative and landing-page matrix, weekly performance readout, quality review, and monthly model refresh.</li>
       </ul>
-      <div class="source-line">
-        Sources:
-        <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1778307888311609">#marketing May 9 (access path to Jordan)</a> ·
-        <a href="https://cobaltintelligence.slack.com/archives/C0B0DNX718A/p1778635978373589">#workingplanet-cobalt May 13 (invitation sent)</a>
-      </div>
+      <div class="source-line">Status: discussion-ready for launch expectations, timeline, and operating-detail gaps.</div>
     </div>
 
+    <div class="group">
+      <h3>SWAHG job-board report and QA foundation built <span class="pill">Done</span></h3>
+      <ul>
+        <li><strong>The job board now publishes 30 cleaned jobs</strong> after removing low-trust and polluted records.</li>
+        <li><strong>Tier 5 HiringCafe manual intake was documented</strong> without bypassing Cloudflare or CAPTCHA.</li>
+        <li><strong>QA gates passed</strong>: source registry, source decisions, source health, run history, PRD audit, and public board checks are available for review.</li>
+      </ul>
+      <div class="source-line">Source: <a href="https://writingsbylala.com/swahg-jobs/">SWAHG Jobs board</a></div>
+    </div>
   </section>
 
   <section class="module in-progress">
-    <h2>In progress</h2>
-
+    <h2>In Progress</h2>
     <div class="group">
-      <h3>Working Planet $30k/mo proposal review <span class="pill">In progress</span></h3>
+      <h3>Cobalt CLI video publishing pass <span class="pill amber">In Progress</span></h3>
       <ul>
-        <li><strong>Initial proposal received</strong> with 53 target keywords across 6 intent clusters and a phased ramp ($10k → $30k MRR).</li>
-        <li><strong>5-question reply drafted</strong> covering keyword overlap with existing rankings, projected CPC ranges, attribution mechanics, and the LTV math behind the proposed spend tier.</li>
-        <li><strong>Pre-signing data pulls queued:</strong> 12-month closed-won deal averages from Close, GSC 28-day for the 53 WP keywords (double-spend check), Master Blog Inventory cross-reference for keyword clusters where we already have landing pages.</li>
-        <li><strong>Stripe to Close MRR sync gap</strong> remains the launch blocker for the June 1 start. Engineering ownership question for Jordan.</li>
+        <li><strong>Next decision</strong>: whether the demos are for engineering enablement, social clips, or both.</li>
+        <li><strong>Before publishing</strong>: apply the audit wording fixes and re-render corrected videos.</li>
+        <li><strong>Optional follow-up</strong>: add a workflow README or one longer enablement video if this is meant for technical buyers.</li>
       </ul>
     </div>
-
     <div class="group">
-      <h3>Broker Fair event preparation <span class="pill">In progress</span></h3>
+      <h3>Working Planet launch readiness <span class="pill amber">In Progress</span></h3>
       <ul>
-        <li><strong>SOS Reliability Index shipped</strong> as the second Broker Fair report (covered above in Completed).</li>
-        <li><strong>Pamphlet, gifts, merch</strong> tracking continues with Patricia. QR-code-on-print pathway validated this week.</li>
-        <li><strong>Awaiting the list of attendees</strong> so we can start the LinkedIn outreach ahead of the event.</li>
+        <li><strong>Need to align internally</strong> on what early success means: qualified pipeline, demo quality, or realized MRR.</li>
+        <li><strong>Need the first evaluation timeline</strong>: early signal window, optimization window, and when budget allocation should change.</li>
+        <li><strong>Thin areas to watch</strong>: channel allocation, conversion definitions, creative ownership, landing-page plan, and reporting cadence.</li>
       </ul>
     </div>
-
   </section>
 
   <section class="module">
-    <h2>Standing dashboards</h2>
-
-    <div class="dash-card">
-      <div class="dash-head">
-        <h3>SEO KPI · year-to-date</h3>
-        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/seo-kpi-dashboard.html">Live dashboard</a> · OpenPageRank + GA4 weekly + monthly</div>
-      </div>
-      <img src="assets/seo-kpi-dashboard.png" alt="SEO KPI Dashboard year-to-date. Latest week (May 7 to May 13, 2026): 17,101 total users, 14,625 new users, 17,625 sessions, 20,035 page views, 8 booked calls, 26 created accounts. OpenPageRank 3.27. Refreshed May 14, 2026." />
-    </div>
-
-    <div class="dash-card">
-      <div class="dash-head">
-        <h3>Traffic Insights · last 7 days</h3>
-        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/traffic-insights.html">Live dashboard</a> · GA4 weekly + monthly</div>
-      </div>
-      <img src="assets/traffic-insights.png" alt="Traffic Insights last 7 days with sessions, top pages, AI search clicks, channel mix." />
-    </div>
-
-    <div class="dash-card">
-      <div class="dash-head">
-        <h3>AI Visibility (AEO) · 154 prompts</h3>
-        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/aeo-dashboard.html">Live dashboard</a> · Self-hosted, replaced Searchable</div>
-      </div>
-      <img src="assets/aeo-dashboard.png" alt="AEO Dashboard combined mention rate across 154 prompts and 9 engines, with per-engine breakdown for Perplexity, OpenAI, Gemini." />
-    </div>
-
-    <div class="dash-card">
-      <div class="dash-head">
-        <h3>Beyond Banks Newsletter</h3>
-        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/newsletter-kpi-dashboard.html">Live dashboard</a> · Open rate trend, latest edition vs avg</div>
-      </div>
-      <img src="assets/newsletter-kpi-dashboard.png" alt="Newsletter KPI Dashboard with latest unique opens, latest open rate, average opens, average open rate, and peak edition." />
-    </div>
-
-    <div class="dash-card">
-      <div class="dash-head">
-        <h3>YouTube · Shorts + long-form</h3>
-        <div class="src"><a href="https://laladim.github.io/life-dashboard-site/youtube-kpi-dashboard.html">Live dashboard</a> · 211 Shorts + 290 long-form, Jan 2025 to present</div>
-      </div>
-      <img src="assets/youtube-kpi-dashboard.png" alt="YouTube KPI Dashboard with new subscribers, unsubscribes, likes, views, watch hours, and shares for the latest month vs prior month." />
-    </div>
-
+    <h2>Standing Dashboards</h2>
+    <div class="dash-card"><div class="dash-head"><h3>SEO KPI Dashboard</h3><div class="src">Year-to-date traffic, conversions, and OpenPageRank.</div></div><img src="assets/seo-kpi-dashboard.png" alt="SEO KPI dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><h3>Traffic Insights</h3><div class="src">Weekly traffic breakdown and movement.</div></div><img src="assets/traffic-insights.png" alt="Traffic insights dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><h3>AI Visibility Dashboard</h3><div class="src">AEO prompt visibility and gaps.</div></div><img src="assets/aeo-dashboard.png" alt="AI visibility dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><h3>Newsletter KPI Dashboard</h3><div class="src">Beyond Banks edition performance.</div></div><img src="assets/newsletter-kpi-dashboard.png" alt="Newsletter KPI dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><h3>YouTube KPI Dashboard</h3><div class="src">Cobalt YouTube video and subscriber motion.</div></div><img src="assets/youtube-kpi-dashboard.png" alt="YouTube KPI dashboard screenshot"></div>
   </section>
 
-  <footer class="meta-footer">
-    <div>Generated May 14, 2026 · Source: Slack conversations May 7 to May 13 + live dashboard snapshots refreshed May 14.</div>
-    <div>Repo: <a href="https://github.com/cobaltshela/cobalt-weekly-status">github.com/cobaltshela/cobalt-weekly-status</a></div>
-  </footer>
-
+  <footer><span>Generated May 21, 2026 for the May 22, 2026 Jordan meeting.</span><span>Root URL always shows the latest weekly report.</span></footer>
 </main>
-
 </body>
 </html>
