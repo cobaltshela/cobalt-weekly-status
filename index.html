@@ -21,6 +21,9 @@ header.hero h1{margin:0 0 6px;font-size:24px;font-weight:600}
 header.hero .sub{font-size:13.5px;opacity:.86}
 header.hero .meta{margin-top:12px;font-size:12.5px;display:flex;gap:22px;flex-wrap:wrap;opacity:.92}
 main{max-width:980px;margin:0 auto;padding:28px 36px 64px}
+.report-actions{max-width:980px;margin:0 auto;padding:18px 36px 0;display:flex;justify-content:flex-end}
+.pdf-button{border:1px solid rgba(15,23,42,.14);border-radius:8px;background:var(--blue);color:#F8FAFC;display:inline-flex;align-items:center;gap:8px;font:700 13px/1 Inter,sans-serif;padding:11px 14px;text-decoration:none;box-shadow:0 8px 18px rgba(0,71,171,.18)}
+.pdf-button:hover{background:var(--blue-light);border-bottom-color:rgba(15,23,42,.14)}
 .lede,.group{background:var(--card);border:1px solid var(--border);border-radius:10px}
 .lede{padding:16px 22px;margin-bottom:24px;font-size:14px;color:var(--slate)}
 .lede strong{color:var(--navy)}
@@ -45,8 +48,8 @@ a:hover{border-bottom-color:var(--blue)}
 .dash-link:hover{border-color:var(--blue);background:#EFF6FF}
 .dash-card img{display:block;width:100%;height:auto;filter:brightness(.985)}
 footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-@media screen and (max-width:720px){main{padding:20px 18px 52px}header.hero{padding:26px 22px}header.hero h1{font-size:20px}}
-@media print{@page{margin:.45in;background-color:#EEF2F7}html,body{background:#EEF2F7}header.hero{padding:24px 34px}main{padding:16px 0 0;max-width:none}.lede{padding:13px 18px;margin-bottom:16px;font-size:12.5px;line-height:1.48}section.module{margin-top:18px}section.module>h2{font-size:16px;margin-bottom:10px}.group{padding:13px 18px;margin-bottom:10px}.group h3{font-size:13px;margin-bottom:8px}ul{font-size:12px;line-height:1.48}.source-line{font-size:10.5px}.lede,.dash-head{break-inside:avoid}.dashboard-section{display:none}footer{display:none}}
+@media screen and (max-width:720px){main{padding:20px 18px 52px}.report-actions{padding:16px 18px 0}.pdf-button{width:100%;justify-content:center}header.hero{padding:26px 22px}header.hero h1{font-size:20px}}
+@media print{@page{margin:.45in;background-color:#EEF2F7}html,body{background:#EEF2F7}.report-actions{display:none}header.hero{padding:24px 34px}main{padding:16px 0 0;max-width:none}.lede,.group{background:#F8FAFC}.lede{padding:13px 18px;margin-bottom:16px;font-size:12.5px;line-height:1.48}section.module{margin-top:18px}section.module>h2{font-size:16px;margin-bottom:10px}.group{padding:13px 18px;margin-bottom:10px}.group h3{font-size:13px;margin-bottom:8px}ul{font-size:12px;line-height:1.48}.source-line{font-size:10.5px}.lede,.dash-head{break-inside:avoid}.dashboard-section{display:none}footer{display:none}}
 </style>
 </head>
 <body>
@@ -61,6 +64,7 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-
     <span><strong>Generated:</strong> June 4, 2026</span>
   </div>
 </header>
+<div class="report-actions" aria-label="Report actions"><a class="pdf-button" href="weekly-status-jordan-2026-05-28-to-2026-06-03.pdf" download>Save as PDF</a></div>
 <main>
   <div class="lede">
     Biggest signal this week: <strong>traffic cooled after the May spike, but conversion intent is still present.</strong> May 28 to June 3 closed at <strong>21.6K users</strong>, <strong>25.4K sessions</strong>, <strong>4 booked calls</strong>, and <strong>20 created accounts</strong>. The main work update is the blog attribution handoff: Close custom fields and demo-page UTM passing are set up, and Jordan's side is needed for production deploy, SavvyCal-to-Close mapping, and signup-flow attribution.
