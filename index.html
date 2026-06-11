@@ -3,15 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cobalt Intelligence Weekly Status, Week of May 28 to June 3, 2026</title>
+<title>Cobalt Intelligence Weekly Status, Week of June 4 to June 10, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --navy:#0F172A; --slate:#1E293B; --blue:#0047AB; --blue-light:#2563C8;
-  --bg:#F8FAFC; --card:#FFFFFF; --text:#0F172A; --muted:#64748B;
-  --border:#E2E8F0; --green:#059669; --green-bg:#D1FAE5;
-  --amber:#D97706; --amber-bg:#FEF3C7;
-}
+:root{--navy:#0F172A;--slate:#1E293B;--blue:#0047AB;--blue-light:#2563C8;--bg:#F8FAFC;--card:#FFFFFF;--text:#0F172A;--muted:#64748B;--border:#E2E8F0;--green:#059669;--green-bg:#D1FAE5;--amber:#D97706;--amber-bg:#FEF3C7}
 *{box-sizing:border-box}
 body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
 h1,h2,h3{font-family:Sora,Inter,sans-serif;letter-spacing:0}
@@ -49,41 +44,39 @@ a:hover{border-bottom-color:var(--blue)}
 .dash-card img{display:block;width:100%;height:auto;filter:brightness(.985)}
 footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media screen and (max-width:720px){main{padding:20px 18px 52px}.report-actions{padding:16px 18px 0}.pdf-button{width:100%;justify-content:center}header.hero{padding:26px 22px}header.hero h1{font-size:20px}}
-@media print{@page{margin:.45in;background-color:#EEF2F7}html,body{background:#EEF2F7}.report-actions{display:none}header.hero{padding:24px 34px}main{padding:16px 0 0;max-width:none}.lede,.group{background:#F8FAFC}.lede{padding:13px 18px;margin-bottom:16px;font-size:12.5px;line-height:1.48}section.module{margin-top:18px}section.module>h2{font-size:16px;margin-bottom:10px}.group{padding:13px 18px;margin-bottom:10px}.group h3{font-size:13px;margin-bottom:8px}ul{font-size:12px;line-height:1.48}.source-line{font-size:10.5px}.lede,.dash-head{break-inside:avoid}.dashboard-section{display:none}footer{display:none}}
+@media print{@page{margin:.36in;background-color:#EEF2F7}html,body{background:#EEF2F7}.report-actions{display:none}header.hero{padding:18px 28px}header.hero h1{font-size:22px}header.hero .sub{font-size:12.5px}header.hero .meta{margin-top:9px;font-size:11.5px}main{padding:12px 0 0;max-width:none}.lede,.group{background:#F8FAFC}.lede{padding:10px 15px;margin-bottom:12px;font-size:11.5px;line-height:1.36}section.module{margin-top:12px}section.module>h2{font-size:14px;margin-bottom:7px;padding-bottom:4px}.group{padding:9px 15px;margin-bottom:7px}.group h3{font-size:12px;margin-bottom:5px}ul{font-size:10.7px;line-height:1.32}.source-line{font-size:9.5px;margin-top:4px}.lede,.dash-head{break-inside:avoid}.dashboard-section{display:none}footer{display:none}}
 </style>
 </head>
 <body>
 <header class="hero">
   <div class="eyebrow">Cobalt Intelligence Weekly Status</div>
-  <h1>Week of May 28 to June 3, 2026</h1>
+  <h1>Week of June 4 to June 10, 2026</h1>
   <div class="sub">Meeting report for Jordan: current dashboards, shipped items, and open handoffs.</div>
   <div class="meta">
     <span><strong>For:</strong> Jordan</span>
     <span><strong>From:</strong> Shela</span>
-    <span><strong>Period:</strong> May 28 to June 3, 2026</span>
-    <span><strong>Generated:</strong> June 4, 2026</span>
+    <span><strong>Period:</strong> June 4 to June 10, 2026</span>
+    <span><strong>Generated:</strong> June 11, 2026</span>
   </div>
 </header>
-<div class="report-actions" aria-label="Report actions"><a class="pdf-button" href="weekly-status-jordan-2026-05-28-to-2026-06-03.pdf" download>Save as PDF</a></div>
+<div class="report-actions" aria-label="Report actions"><a class="pdf-button" href="weekly-status-jordan-2026-06-04-to-2026-06-10.pdf" download>Save as PDF</a></div>
 <main>
   <div class="lede">
-    Biggest signal this week: <strong>traffic cooled after the May spike, but conversion intent is still present.</strong> May 28 to June 3 closed at <strong>21.6K users</strong>, <strong>25.4K sessions</strong>, <strong>4 booked calls</strong>, and <strong>20 created accounts</strong>. The main work update is the blog attribution handoff: Close custom fields and demo-page UTM passing are set up, and Jordan's side is needed for production deploy, SavvyCal-to-Close mapping, and signup-flow attribution.
+    Biggest signal this week: <strong>traffic has normalized hard after the May spike, but conversion count held.</strong> June 4 to June 10 closed at <strong>6.5K users</strong>, <strong>7.4K sessions</strong>, <strong>10.7K views</strong>, <strong>4 booked calls</strong>, and <strong>22 created accounts</strong>. For tomorrow's meeting, the main handoffs are the staging review for Patrick's website notes and the open Jordan-side queue that Shela said can be discussed live.
   </div>
 
   <section class="module">
     <h2>Dashboard Summary</h2>
     <div class="group">
       <ul>
-        <li><strong>Website Traffic</strong> is back down from the prior spike: 21.6K users, 18.6K new users, 25.4K sessions, and 22.1K pageviews for May 28 to June 3.</li>
-        <li><strong>Conversions</strong> improved on booked calls from the prior week, 4 calls vs 2, while created accounts moved from 22 to 20.</li>
-        <li><strong>Website Page Performance</strong> should be read as normalized traffic after two very high May weeks, not as a new growth trend yet.</li>
-        <li><strong>Domain Rating</strong> remains on the OpenPageRank scale at 3.27/10, checked June 4. OpenPageRank is a different scale from the old Ahrefs DR.</li>
-        <li><strong>AI Visibility</strong> is 44.16% combined mention rate from the May 24 run: Cobalt was cited in 68 of 154 prompts, with 8 cited wins and 24 zero-rate gaps.</li>
-        <li><strong>AEO wins</strong> are strongest around real-time Secretary of State API, Cobalt vs Middesk, business verification API, multi-state SOS coverage, and Cobalt pricing prompts.</li>
-        <li><strong>AEO gaps</strong> are still high-intent state lookup and legitimacy prompts, including registered-business checks, Texas, New York, and step-by-step SOS API queries.</li>
-        <li><strong>Newsletter</strong> KPI source is now refreshed from Beehiiv through Jun 4: Deposit-Funded Fintechs Move to Undercut Alt Lenders sent to 650, produced 285 unique opens, 43.81% open rate, 0 unique clicks, and 2 unsubscribes.</li>
-        <li><strong>Newsletter trend</strong> across the last 5 editions is 378 average unique opens and 50.9% average open rate; the May 26 CFSB and Jun 2 Axiom editions had the strongest recent clicks with 6 unique clicks each.</li>
-        <li><strong>YouTube</strong> is current from Shela's corrected Content Type export for Mar 6 to Jun 4: 11,759 views, 7,041 engaged views, 105.0 watch hours, 23 Shorts published, and net -12 subscribers.</li>
+        <li><strong>Website Traffic</strong> is now at a normal post-spike level: 6.5K users, 7.4K sessions, and 10.7K views for June 4 to June 10.</li>
+        <li><strong>Conversions</strong> stayed useful even with lower traffic: booked calls held at 4, and created accounts moved from 20 to 22.</li>
+        <li><strong>Traffic Insights</strong> shows homepage and directory traffic leading the week, with Organic Search still the best SEO channel and blog traffic at 343 sessions.</li>
+        <li><strong>Domain Rating</strong> remains on the OpenPageRank scale at 3.27/10, checked June 11. OpenPageRank is a different scale from the old Ahrefs DR.</li>
+        <li><strong>AI Visibility</strong> is current from the June 7 AEO run: 37.66% combined mention rate, 58 of 154 prompts cited by at least one engine.</li>
+        <li><strong>AEO wins</strong> are still strongest around Secretary of State API and Cobalt vs Middesk prompts; the biggest gaps remain registered-business, Texas, New York, and step-by-step SOS API queries.</li>
+        <li><strong>Newsletter</strong> latest tracked edition is June 4: Deposit-Funded Fintechs Move to Undercut Alt Lenders sent to 650, with 285 unique opens, 43.81% open rate, 0 clicks, and 2 unsubscribes.</li>
+        <li><strong>YouTube</strong> is unchanged from the corrected Content Type export through June 4: 11,759 views, 7,041 engaged views, 105.0 watch hours, 23 Shorts published, and net -12 subscribers.</li>
       </ul>
     </div>
   </section>
@@ -91,55 +84,38 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-
   <section class="module">
     <h2>Completed This Week</h2>
     <div class="group">
-      <h3>Blog attribution foundation <span class="pill">Done</span></h3>
-      <ul>
-        <li><strong>Close lead fields are created</strong> for UTM Source, UTM Medium, UTM Campaign, and UTM Content.</li>
-        <li><strong>The demo page is updated</strong> so blog CTA links pass those UTM values into the SavvyCal demo-booking flow.</li>
-        <li><strong>The handoff is now clear</strong>: this lets us identify when a Close lead came from a blog CTA and which post drove it.</li>
-      </ul>
-      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1780478490175329">#marketing, June 3</a></div>
-    </div>
-
-    <div class="group">
       <h3>Standing dashboards refreshed <span class="pill">Done</span></h3>
       <ul>
-        <li><strong>SEO KPI, Traffic Insights, AEO, Newsletter KPI, and YouTube KPI</strong> were refreshed before this report was rebuilt.</li>
-        <li><strong>The current weekly row is live</strong> for May 28 to June 3: 21.6K users, 25.4K sessions, 4 booked calls, and 20 created accounts.</li>
-        <li><strong>The five reference screenshots below</strong> are the current meeting view, with Trial to Customer intentionally excluded.</li>
+        <li><strong>SEO KPI, Traffic Insights, AEO, Newsletter KPI, and YouTube KPI</strong> were rebuilt or rechecked for the meeting view.</li>
+        <li><strong>The current weekly row is live</strong> for June 4 to June 10: 6.5K users, 7.4K sessions, 4 booked calls, and 22 created accounts.</li>
+        <li><strong>OpenPageRank was checked June 11</strong> and remains 3.27/10 on the OpenPageRank scale.</li>
       </ul>
+      <div class="source-line">Status: dashboard refresh and live screenshot verification, June 11.</div>
     </div>
 
     <div class="group">
-      <h3>Newsletter KPI current through Jun 4 <span class="pill">Done</span></h3>
+      <h3>Patrick website notes staged <span class="pill">Done</span></h3>
       <ul>
-        <li><strong>102 editions are tracked</strong> in the Newsletter KPI dashboard, with unique opens as the primary metric.</li>
-        <li><strong>Latest edition</strong>: Deposit-Funded Fintechs Move to Undercut Alt Lenders, 650 sent, 285 unique opens, 43.81% open rate, 0.00% CTR, and 0 unique clicks.</li>
-        <li><strong>Recent performance</strong>: last 5 editions averaged 378 unique opens and 50.9% open rate after the Beehiiv refresh.</li>
+        <li><strong>Michigan link update is staged</strong> with the current MiBusiness Registry search portal.</li>
+        <li><strong>Footer video replacement is staged</strong> where the old YouTube playlist embed was unavailable.</li>
+        <li><strong>Build and staging verification passed</strong>; production has not been deployed yet and is ready for review.</li>
       </ul>
-    </div>
-
-    <div class="group">
-      <h3>YouTube Analytics exported from Studio <span class="pill">Done</span></h3>
-      <ul>
-        <li><strong>Current export period</strong>: Mar 6 to Jun 4, 2026, from Shela's corrected YouTube Studio Content Type export.</li>
-        <li><strong>Total performance</strong>: 11,759 views, 7,041 engaged views, 105.0 watch hours, 30,289 impressions, 2.87% CTR, 36 subscribers gained, 48 lost, and net -12 subscribers.</li>
-        <li><strong>Content type split</strong>: Shorts produced 8,972 views, 4,255 engaged views, 30.6 watch hours, 23 videos published, and net +7 subscribers; Videos produced 2,813 views, 2,813 engaged views, 74.9 watch hours, and net +14 subscribers.</li>
-        <li><strong>Subscriber read</strong>: the subscriber drag is not Shorts or Videos. The `Other` bucket shows net -33 subscribers, which is what pulls the account to net -12 for the period.</li>
-      </ul>
+      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1781141685389709">#marketing, June 11</a></div>
     </div>
   </section>
 
   <section class="module">
     <h2>In Progress</h2>
     <div class="group">
-      <h3>Jordan-side attribution handoff <span class="pill amber">In Progress</span></h3>
+      <h3>Jordan review queue for meeting <span class="pill amber">In Progress</span></h3>
       <ul>
-        <li><strong>Production deploy</strong> is the next step for the demo-page attribution update.</li>
-        <li><strong>SavvyCal-to-Close mapping</strong> still needs to connect the passed UTM fields into Close reliably.</li>
-        <li><strong>Create-account attribution</strong> is still open for the signup flow, especially leads that bypass demo booking.</li>
+        <li><strong>Jordan asked what is still waiting on him</strong> after getting back in town.</li>
+        <li><strong>Shela's response was to discuss them in the meeting</strong>, so tomorrow's agenda should include open Codex requests and staging review items.</li>
+        <li><strong>Immediate handoff</strong>: review and merge the staged Patrick website notes, then decide when production should be deployed.</li>
       </ul>
-      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1780478490175329">#marketing, June 3</a></div>
+      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1781031333393219">#marketing, June 10</a> and <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1781100957443699">#marketing, June 10</a></div>
     </div>
+
   </section>
 
   <section class="module dashboard-section">
@@ -151,7 +127,7 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-
     <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>YouTube KPI Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/youtube-kpi-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Cobalt YouTube video and subscriber motion.</div></div><img src="assets/youtube-kpi-dashboard.png" alt="YouTube KPI dashboard screenshot"></div>
   </section>
 
-  <footer><span>Generated June 4, 2026 for Jordan meeting prep.</span><span>Root URL always shows the latest weekly report.</span></footer>
+  <footer><span>Generated June 11, 2026 for Jordan meeting prep.</span><span>Root URL always shows the latest weekly report.</span></footer>
 </main>
 </body>
 </html>
