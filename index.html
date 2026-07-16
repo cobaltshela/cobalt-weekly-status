@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cobalt Intelligence Weekly Status, Week of July 3 to July 9, 2026</title>
+<title>Cobalt Intelligence Weekly Status, Week of July 10 to July 16, 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0F172A;--slate:#1E293B;--blue:#0047AB;--blue-light:#2563C8;--bg:#F8FAFC;--card:#FFFFFF;--text:#0F172A;--muted:#64748B;--border:#E2E8F0;--green:#059669;--green-bg:#D1FAE5;--amber:#D97706;--amber-bg:#FEF3C7;--red:#B91C1C;--red-bg:#FEE2E2}
@@ -51,37 +51,37 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-
 <body>
 <header class="hero">
   <div class="eyebrow">Cobalt Intelligence Weekly Status</div>
-  <h1>Week of July 3 to July 9, 2026</h1>
+  <h1>Week of July 10 to July 16, 2026</h1>
   <div class="sub">Meeting report for Jordan: current dashboards and the Working Planet paid-ad attribution build.</div>
   <div class="meta">
     <span><strong>For:</strong> Jordan</span>
     <span><strong>From:</strong> Shela</span>
-    <span><strong>Period:</strong> July 3 to July 9, 2026 (ISO week 28)</span>
-    <span><strong>Generated:</strong> July 9, 2026</span>
+    <span><strong>Period:</strong> July 10 to July 16, 2026 (ISO week 29)</span>
+    <span><strong>Generated:</strong> July 16, 2026</span>
   </div>
 </header>
-<div class="report-actions" aria-label="Report actions"><a class="pdf-button" href="weekly-status-jordan-2026-07-03-to-2026-07-09.pdf" download>Save as PDF</a></div>
+<div class="report-actions" aria-label="Report actions"><a class="pdf-button" href="weekly-status-jordan-2026-07-10-to-2026-07-16.pdf" download>Save as PDF</a></div>
 <main>
   <div class="lede">
-    Biggest signal this week: <strong>created accounts rose to 44 from 39 and demo-booking attribution is now built end to end for Working Planet.</strong> July 2 to July 8 closed at <strong>36.6K users</strong> (up from 28.6K six days prior), <strong>37.4K sessions</strong>, <strong>40.2K views</strong>, <strong>11 booked calls</strong>, and a <strong>89.9% bounce rate</strong> that points back to the directory state entity pages. The main shipped work is three paid-ad attribution PRs: the demo page now passes UTMs into SavvyCal, the cookie window is extended to 30 days, and the SavvyCal-to-Close sync is in final review.
+    Biggest signal this week: <strong>the SavvyCal to Close attribution sync is now deployed on the correct backend function, and Working Planet added an explicit Demo No Show status in Close.</strong> Website volume dropped hard: July 9 to July 15 closed at <strong>5.9K users</strong>, down about 31.4K from six days prior as the directory state entity pages fell off, with <strong>6.8K sessions</strong>, <strong>10.0K views</strong>, <strong>18 booked calls</strong>, <strong>31 created accounts</strong>, and bounce easing to <strong>57.4%</strong>. The one remaining blocker is the SavvyCal webhook signature verification, which needs a code change before demo booking UTMs can populate Close.
   </div>
 
   <section class="module">
     <h2>Executive Summary</h2>
     <div class="group">
       <ul>
-        <li><strong>Total Users:</strong> 36.6K for the week, up from 28.6K six days ago.</li>
-        <li><strong>Sessions:</strong> 37.4K, with page views at 40.2K.</li>
-        <li><strong>Created Accounts:</strong> 44, up from 39 last week.</li>
-        <li><strong>Booked Calls:</strong> 11 for the window.</li>
+        <li><strong>Total Users:</strong> 5.9K for the week, down about 31.4K from six days ago.</li>
+        <li><strong>Sessions:</strong> 6.8K, with page views at 10.0K.</li>
+        <li><strong>Created Accounts:</strong> 31 for the window.</li>
+        <li><strong>Booked Calls:</strong> 18, up from 11 last week.</li>
       </ul>
       <p style="margin:8px 0 4px;font-weight:600;color:var(--navy)">Highlights</p>
       <ul>
-        <li>Paid-ad attribution for demo bookings is now built end to end for Working Planet across three PRs.</li>
-        <li>Signup and free trial tracking is live in Close, writing Source = Paid Ads plus the UTM fields on Jordan's field IDs.</li>
-        <li>Attribution cookie window extended from 1 day to 30 days to match Google's click window, fixing the paid-conversion undercounting.</li>
-        <li>Created accounts rose to 44 from 39 and booked calls landed at 11, with weekly users at 36.6K.</li>
-        <li>The SavvyCal-to-Close demo sync (PR #18) is in final review, pending merge, deploy, and one live Close test.</li>
+        <li>Website volume dropped to 5.9K users, down about 31.4K from six days ago, as the directory state entity pages keep falling off; bounce eased to 57.4%.</li>
+        <li>The SavvyCal to Close UTM sync signature fix is now deployed on the correct backend function, with route, handler, and secrets all verified against AWS.</li>
+        <li>Working Planet added an explicit Demo No Show status in Close, giving cleaner paid-lead quality visibility.</li>
+        <li>Booked calls rose to 18 for the window with 31 created accounts.</li>
+        <li>Remaining blocker: the SavvyCal webhook is rejecting every signed request at verification, so a signature scheme code change is queued behind Jordan's review, merge, deploy, and one live test booking.</li>
       </ul>
     </div>
   </section>
@@ -90,14 +90,28 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-
     <h2>Dashboard Summary</h2>
     <div class="group">
       <ul>
-        <li><strong>Website Traffic</strong> users surged to 36.6K from 28.6K six days ago with sessions at 37.4K and views at 40.2K, but bounce sits at 89.9%: the directory state entity page changes are still driving high-bounce volume, not engaged readers.</li>
-        <li><strong>Conversions</strong> moved the right way: created accounts rose to 44 from 39, and booked calls landed at 11.</li>
-        <li><strong>Traffic Insights</strong> confirms the split: /directory* pages bounce near 98% and the homepage at 75%, while blog organic search and the funnel pages (/dashboard, /login, /create-account) stay engaged below 50% and 10%.</li>
-        <li><strong>Domain Rating</strong> holds at 3.27/10 on the OpenPageRank scale, checked July 9, no change since the March 28 reading.</li>
-        <li><strong>AI Visibility</strong> 41.6% combined mention rate on the July 5 AEO run, 64 of 154 prompts cited across the engines, with 8 wins and 12 gaps.</li>
-        <li><strong>AEO wins</strong> stay strongest on Secretary of State API and Cobalt vs Middesk prompts, with Perplexity leading at 35.7% and OpenAI at 24.0%; registered-business, Texas, and New York entity lookups remain the biggest gaps.</li>
+        <li><strong>Website Traffic</strong> is continuously going down due to the directory state entity page changes: users fell to 5.9K from about 37.2K six days ago, with sessions at 6.8K and views at 10.0K, though bounce eased to 57.4% as the high-bounce directory volume dropped off.</li>
+        <li><strong>Conversions</strong> held up against the volume drop: created accounts landed at 31 and booked calls rose to 18.</li>
+        <li><strong>Traffic Insights</strong> confirms the split: /directory* pages still bounce near 98% and the homepage at 75%, while blog organic search and the funnel pages (/dashboard, /login, /create-account) stay engaged below 50% and below 10%.</li>
+        <li><strong>Domain Rating</strong> holds at 3.27/10 on the OpenPageRank scale, checked July 16, no change since the March 28 reading.</li>
+        <li><strong>AI Visibility</strong> sits at 41.6% combined mention rate on the latest AEO run, 64 of 154 prompts cited across the engines, with 8 wins and 12 gaps.</li>
+        <li><strong>AEO wins</strong> stay strongest on Secretary of State API and Cobalt vs Middesk prompts, with Perplexity leading and OpenAI second; registered-business, Texas, and New York entity lookups remain the biggest gaps.</li>
         <li><strong>Newsletter</strong> has steady above 50% open rate across the latest Beyond Banks editions.</li>
-        <li><strong>YouTube</strong> subscriber motion improved on the June 11 to July 8 Studio export: net -11 with 5 gained and 16 lost, better than last window's -15, alongside 2.6K views and 25.9 watch hours. Subscriber motion is still the number to push.</li>
+        <li><strong>YouTube</strong> subscriber motion is still the number to push: net -11 on the latest Studio export, 5 gained against 16 lost, alongside 2.6K views and 25.9 watch hours.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="module">
+    <h2>Close CRM Lead Quality</h2>
+    <div class="group">
+      <ul>
+        <li><strong>Paid-attributed leads:</strong> 19 new paid-attributed leads this week out of 51 new leads total; the recent 30-day paid cohort is 71 leads, 6 of them carrying a Working Planet style paid source signal.</li>
+        <li><strong>Opportunity conversion:</strong> the recent paid cohort holds 23 opportunities, 4 of them new this week, with a type mix of 22 active and 1 won.</li>
+        <li><strong>Opportunity status mix</strong> (Patricia-maintained pipeline truth): 12 Demo No Show, 4 Demo Booked at 10%, 2 Post Demo Positive at 50%, 2 Post Demo negative at 5%, 1 Active Customer, 1 Initial Contact at 5%, and 1 Won at 100%.</li>
+        <li><strong>Meetings:</strong> 18 completed and 1 declined by lead, plus 1 possible no-show or stale meeting status; the explicit Demo No Show status Patricia added now shows on 12 opportunities.</li>
+        <li><strong>Fit tagging</strong> (Jordan's call fit/not-fit tag): 2 paid leads fit-tagged and 2 flagged Misfit, a bad-fit signal on paid spend.</li>
+        <li><strong>Net signal:</strong> 14 negative or lost opportunity signals against 4 positive or won, so the recent paid cohort is still tilting toward no-shows and bad fit rather than advancing opportunities.</li>
       </ul>
     </div>
   </section>
@@ -105,29 +119,40 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-
   <section class="module">
     <h2>Completed This Week</h2>
     <div class="group">
-      <h3>Working Planet onboarding: paid-ad attribution shipped <span class="pill">Done</span></h3>
+      <h3>Infrastructure and Security: SavvyCal to Close UTM sync deploy verified <span class="pill">Done</span></h3>
       <ul>
-        <li><strong>Two small PRs finish paid-ad attribution for demo bookings</strong>, the thing Working Planet asked about: PR #54 makes the demo page pass UTMs to SavvyCal in the metadata format it actually stores, already verified on staging with a real test booking; and PR #18, the SavvyCal-to-Close sync that writes the booking's UTM and paid fields to the matching Close lead, only filling empty fields so it never overwrites signup or Working Planet attribution.</li>
-        <li><strong>One more PR for the same batch</strong>: PR #76 extends the attribution cookie from 1 day to 30 days to match Google's click window. The 1-day expiry was undercounting paid conversions since B2B buyers rarely sign up same-day. Heads up that Paid Ads counts in Close will rise after this deploys, that is the undercounting being fixed.</li>
-        <li><strong>All comments addressed, CI green on all three PRs</strong>: #54 rebased onto master with a lockfile-only audit fix, 0 vulnerabilities now; #18 all 4 Copilot comments fixed, covering query escaping, a case-insensitive signature header, and timeouts on the Close calls; #76 now strips fragments before the cookie is written.</li>
-        <li><strong>Told Working Planet that signup and free trial tracking is live</strong>: last ad touch, stored in a first-party cookie, captures any utm_* value, click IDs like gclid and fbclid, or nb/brnd source values, and at signup writes Source = Paid Ads plus Paid Network, Paid Source, Paid Keyword, and the UTM fields to Close on the same field IDs Jordan shared.</li>
-        <li><strong>Cleared the added Copilot rounds on the SavvyCal-to-Close sync #18</strong>; CI is green and the Copilot review threads are resolved. PR #18 is ready for review, merge, and deploy.</li>
+        <li><strong>Debugged the SavvyCal to Close UTM sync with Jordan and Loki</strong> and confirmed the signature verification fix is now deployed on the correct backend function, after finding Jordan's earlier deploy had landed on the signup function instead.</li>
+        <li><strong>Verified the API Gateway route, the handler wiring, and the Secrets Manager setup</strong> all check out against AWS, so the plumbing for the sync is correct.</li>
+        <li><strong>Documented the two-function deploy gotcha</strong> so the signup path and the SavvyCal path do not get crossed again on the next deploy.</li>
+        <li><strong>Net effect:</strong> the SavvyCal side of the paid-ad attribution sync is now sitting on the right function with its route, handler, and secrets all verified, so the only piece left is the signature scheme itself.</li>
       </ul>
-      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783035636444059">#marketing, July 3</a>; <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783036744279699">#marketing, July 3</a>; <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783039506932579">#marketing, July 3</a>; <a href="https://cobaltintelligence.slack.com/archives/C0B0DNX718A/p1783064317255589">#workingplanet-cobalt, July 3</a>; <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783483198942509">#marketing, July 8</a>; <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783556493739609">#marketing, July 9</a>.</div>
+      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783479674190579">#marketing, July 10</a>.</div>
+    </div>
+    <div class="group">
+      <h3>Working Planet onboarding: Demo No Show status added in Close <span class="pill">Done</span></h3>
+      <ul>
+        <li><strong>Patricia at Working Planet updated the Close opportunity field</strong> to add a Demo No Show status: "We have updated the opportunity field to have Demo No show status. This will help with visibility on your end as well."</li>
+        <li><strong>Close opportunities now carry an explicit Demo No Show status</strong>, which gives cleaner paid-lead quality visibility on which booked demos actually show.</li>
+        <li><strong>This lines up with the attribution work</strong>: once demo booking UTMs populate in Close, we can tie no-show rate back to paid source per campaign.</li>
+        <li><strong>For the meeting:</strong> the headline is that Working Planet is now tagging no-shows for us, so the paid-lead pipeline in Close should read truer week over week.</li>
+      </ul>
+      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C0B0DNX718A/p1783967325115249">#workingplanet-cobalt, July 14</a>.</div>
     </div>
   </section>
 
   <section class="module">
     <h2>In Progress</h2>
     <div class="group">
-      <h3>Working Planet onboarding: demo-booking sync deploy <span class="pill amber">In Progress</span></h3>
+      <h3>Working Planet attribution: SavvyCal webhook verification fix <span class="pill amber">In Progress</span></h3>
       <ul>
-        <li><strong>Checked the Working Planet attribution issue Sarah flagged</strong>: the demo page UTM handoff into SavvyCal is working, but the SavvyCal-to-Close sync is not fully live yet. PR #18 is still open, and SavvyCal is showing 0 registered webhooks.</li>
-        <li><strong>Still need the backend Function URL</strong>, webhook registration, webhook secret setup, and one live Close test before demo booking UTMs will populate in Close.</li>
-        <li><strong>The frontend demo-page PR #54 is already merged</strong>; the backend sync #18 still shows open and review-required, and that is the piece that creates and deploys the sync and gives us the Function URL for webhook registration.</li>
-        <li><strong>Follow-up for Jordan</strong>: once #18 is deployed, send the Function URL so I can register the SavvyCal webhook and run the test booking to verify the Close fields.</li>
+        <li><strong>Found the root cause of the remaining SavvyCal webhook 401s</strong>: across 200-plus signed requests none ever passed verification, because SavvyCal signs its webhooks with a different signature scheme than the deployed verifier expects.</li>
+        <li><strong>Re-copying the webhook secret will not fix it</strong>; the signature verification needs a code change to match SavvyCal's actual signing scheme.</li>
+        <li><strong>Practically, this is why paid demo bookings have not shown UTMs in Close yet</strong>: the webhook is firing and reaching us, it is just being rejected at verification every time.</li>
+        <li><strong>Opened a diagnostic change to log only the inbound header shape</strong>, no secrets or signature bytes logged, addressed the review rounds, and CI is green; it is deliberately read-only so we can see what SavvyCal sends without touching verifier behavior yet.</li>
+        <li><strong>Once this lands, the real verifier fix follows</strong> and the sync can start writing demo booking UTMs into Close so paid demo attribution is finally captured end to end.</li>
+        <li><strong>Follow-up for Jordan:</strong> review and merge the diagnostic change, deploy it, and fire one real SavvyCal booking so we can confirm the header shape before the verifier fix ships.</li>
       </ul>
-      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783479674190579">#marketing, July 8</a>; <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783480195141149">#marketing, July 8</a>.</div>
+      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783479674190579">#marketing, July 10</a>.</div>
     </div>
   </section>
 
@@ -135,12 +160,12 @@ footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-
     <h2>Standing Dashboards</h2>
     <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>SEO KPI Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/seo-kpi-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Year-to-date traffic, conversions, and OpenPageRank.</div></div><img src="assets/seo-kpi-dashboard.png" alt="SEO KPI dashboard screenshot"></div>
     <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>Traffic Insights</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/traffic-insights.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Weekly traffic breakdown and movement.</div></div><img src="assets/traffic-insights.png" alt="Traffic insights dashboard screenshot"></div>
-    <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>AI Visibility Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/aeo-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">AEO prompt visibility and gaps from the July 5 run.</div></div><img src="assets/aeo-dashboard.png" alt="AI visibility dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>AI Visibility Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/aeo-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">AEO prompt visibility and gaps from the latest run.</div></div><img src="assets/aeo-dashboard.png" alt="AI visibility dashboard screenshot"></div>
     <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>Newsletter KPI Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/newsletter-kpi-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Beyond Banks edition performance.</div></div><img src="assets/newsletter-kpi-dashboard.png" alt="Newsletter KPI dashboard screenshot"></div>
-    <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>YouTube KPI Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/youtube-kpi-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Cobalt YouTube performance from the Studio export covering June 11 to July 8.</div></div><img src="assets/youtube-kpi-dashboard.png" alt="YouTube KPI dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>YouTube KPI Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/youtube-kpi-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Cobalt YouTube performance from the latest Studio export.</div></div><img src="assets/youtube-kpi-dashboard.png" alt="YouTube KPI dashboard screenshot"></div>
   </section>
 
-  <footer><span>Generated July 9, 2026 for Jordan meeting prep.</span><span>Root URL always shows the latest weekly report.</span></footer>
+  <footer><span>Generated July 16, 2026 for Jordan meeting prep.</span><span>Root URL always shows the latest weekly report.</span></footer>
 </main>
 </body>
 </html>
