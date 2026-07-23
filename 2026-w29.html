@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cobalt Intelligence Weekly Status, Week of July 10 to July 16, 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0F172A;--slate:#1E293B;--blue:#0047AB;--blue-light:#2563C8;--bg:#F8FAFC;--card:#FFFFFF;--text:#0F172A;--muted:#64748B;--border:#E2E8F0;--green:#059669;--green-bg:#D1FAE5;--amber:#D97706;--amber-bg:#FEF3C7;--red:#B91C1C;--red-bg:#FEE2E2}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;letter-spacing:0}
+header.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--slate) 58%,var(--blue) 100%);color:white;padding:32px 44px}
+header.hero .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.78;margin-bottom:6px}
+header.hero h1{margin:0 0 6px;font-size:24px;font-weight:600}
+header.hero .sub{font-size:13.5px;opacity:.86}
+header.hero .meta{margin-top:12px;font-size:12.5px;display:flex;gap:22px;flex-wrap:wrap;opacity:.92}
+main{max-width:980px;margin:0 auto;padding:28px 36px 64px}
+.report-actions{max-width:980px;margin:0 auto;padding:18px 36px 0;display:flex;justify-content:flex-end}
+.pdf-button{border:1px solid rgba(15,23,42,.14);border-radius:8px;background:var(--blue);color:#F8FAFC;display:inline-flex;align-items:center;gap:8px;font:700 13px/1 Inter,sans-serif;padding:11px 14px;text-decoration:none;box-shadow:0 8px 18px rgba(0,71,171,.18)}
+.pdf-button:hover{background:var(--blue-light);border-bottom-color:rgba(15,23,42,.14)}
+.lede,.group{background:var(--card);border:1px solid var(--border);border-radius:10px}
+.lede{padding:16px 22px;margin-bottom:24px;font-size:14px;color:var(--slate)}
+.lede strong{color:var(--navy)}
+section.module{margin-top:28px}
+section.module>h2{font-size:18px;color:var(--navy);margin:0 0 14px;padding-bottom:6px;border-bottom:2px solid var(--blue);display:inline-block}
+.group{padding:16px 22px;margin-bottom:12px}
+.group h3{font-size:14px;color:var(--navy);margin:0 0 10px;font-weight:600;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.pill{font-size:10.5px;font-weight:800;padding:2px 8px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase;color:var(--green);background:var(--green-bg)}
+.pill.amber{color:var(--amber);background:var(--amber-bg)}
+.pill.red{color:var(--red);background:var(--red-bg)}
+ul{margin:0;padding-left:20px;font-size:13px;color:var(--slate);line-height:1.65}
+li{margin-bottom:4px}
+li strong{color:var(--navy)}
+a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(0,71,171,.25)}
+a:hover{border-bottom-color:var(--blue)}
+.source-line{font-size:11.5px;color:var(--muted);margin-top:8px}
+.dash-card{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-bottom:18px}
+.dash-head{padding:12px 20px 10px;border-bottom:1px solid var(--border)}
+.dash-title-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:3px}
+.dash-head h3{margin:0;font-size:14px;color:var(--navy)}
+.dash-head .src{font-size:11.5px;color:var(--muted)}
+.dash-link{border:1px solid rgba(0,71,171,.25);border-radius:6px;color:var(--blue);font-size:11.5px;font-weight:700;padding:5px 8px;background:#F8FAFC;white-space:nowrap}
+.dash-link:hover{border-color:var(--blue);background:#EFF6FF}
+.dash-card img{display:block;width:100%;height:auto;filter:brightness(.985)}
+footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--border);font-size:11.5px;color:var(--muted);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media screen and (max-width:720px){main{padding:20px 18px 52px}.report-actions{padding:16px 18px 0}.pdf-button{width:100%;justify-content:center}header.hero{padding:26px 22px}header.hero h1{font-size:20px}}
+@media print{@page{margin:.26in;background-color:#EEF2F7}html,body{background:#EEF2F7}.report-actions{display:none}header.hero{padding:13px 22px}header.hero h1{font-size:19px}header.hero .eyebrow{font-size:10px}header.hero .sub{font-size:10.5px}header.hero .meta{margin-top:6px;font-size:9.5px;gap:14px}main{padding:8px 0 0;max-width:none}.lede,.group{background:#F8FAFC}.lede{padding:8px 12px;margin-bottom:8px;font-size:9.5px;line-height:1.28}section.module{margin-top:8px}section.module>h2{font-size:12px;margin-bottom:5px;padding-bottom:3px}.group{padding:7px 12px;margin-bottom:6px}.group h3{font-size:10.5px;margin-bottom:4px}.pill{font-size:8.5px;padding:1px 7px}ul{font-size:8.8px;line-height:1.25}.source-line{font-size:8px;margin-top:3px}.lede,.dash-head{break-inside:avoid}.dashboard-section{display:none}footer{display:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">Cobalt Intelligence Weekly Status</div>
+  <h1>Week of July 10 to July 16, 2026</h1>
+  <div class="sub">Meeting report for Jordan: current dashboards and the Working Planet paid-ad attribution build.</div>
+  <div class="meta">
+    <span><strong>For:</strong> Jordan</span>
+    <span><strong>From:</strong> Shela</span>
+    <span><strong>Period:</strong> July 10 to July 16, 2026 (ISO week 29)</span>
+    <span><strong>Generated:</strong> July 16, 2026</span>
+  </div>
+</header>
+<div class="report-actions" aria-label="Report actions"><a class="pdf-button" href="weekly-status-jordan-2026-07-10-to-2026-07-16.pdf" download>Save as PDF</a></div>
+<main>
+  <div class="lede">
+    Biggest signal this week: <strong>the SavvyCal to Close attribution sync is now deployed on the correct backend function, and Working Planet added an explicit Demo No Show status in Close.</strong> Website volume dropped hard: July 9 to July 15 closed at <strong>5.9K users</strong>, down about 31.4K from six days prior as the directory state entity pages fell off, with <strong>6.8K sessions</strong>, <strong>10.0K views</strong>, <strong>18 booked calls</strong>, <strong>31 created accounts</strong>, and bounce easing to <strong>57.4%</strong>. The one remaining blocker is the SavvyCal webhook signature verification, which needs a code change before demo booking UTMs can populate Close.
+  </div>
+
+  <section class="module">
+    <h2>Executive Summary</h2>
+    <div class="group">
+      <ul>
+        <li><strong>Total Users:</strong> 5.9K for the week, down about 31.4K from six days ago.</li>
+        <li><strong>Sessions:</strong> 6.8K, with page views at 10.0K.</li>
+        <li><strong>Created Accounts:</strong> 31 for the window.</li>
+        <li><strong>Booked Calls:</strong> 18, up from 11 last week.</li>
+      </ul>
+      <p style="margin:8px 0 4px;font-weight:600;color:var(--navy)">Highlights</p>
+      <ul>
+        <li>Website volume dropped to 5.9K users, down about 31.4K from six days ago, as the directory state entity pages keep falling off; bounce eased to 57.4%.</li>
+        <li>The SavvyCal to Close UTM sync signature fix is now deployed on the correct backend function, with route, handler, and secrets all verified against AWS.</li>
+        <li>Working Planet added an explicit Demo No Show status in Close, giving cleaner paid-lead quality visibility.</li>
+        <li>Booked calls rose to 18 for the window with 31 created accounts.</li>
+        <li>Remaining blocker: the SavvyCal webhook is rejecting every signed request at verification, so a signature scheme code change is queued behind Jordan's review, merge, deploy, and one live test booking.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="module">
+    <h2>Dashboard Summary</h2>
+    <div class="group">
+      <ul>
+        <li><strong>Website Traffic</strong> is continuously going down due to the directory state entity page changes: users fell to 5.9K from about 37.2K six days ago, with sessions at 6.8K and views at 10.0K, though bounce eased to 57.4% as the high-bounce directory volume dropped off.</li>
+        <li><strong>Conversions</strong> held up against the volume drop: created accounts landed at 31 and booked calls rose to 18.</li>
+        <li><strong>Traffic Insights</strong> confirms the split: /directory* pages still bounce near 98% and the homepage at 75%, while blog organic search and the funnel pages (/dashboard, /login, /create-account) stay engaged below 50% and below 10%.</li>
+        <li><strong>Domain Rating</strong> holds at 3.27/10 on the OpenPageRank scale, checked July 16, no change since the March 28 reading.</li>
+        <li><strong>AI Visibility</strong> sits at 41.6% combined mention rate on the latest AEO run, 64 of 154 prompts cited across the engines, with 8 wins and 12 gaps.</li>
+        <li><strong>AEO wins</strong> stay strongest on Secretary of State API and Cobalt vs Middesk prompts, with Perplexity leading and OpenAI second; registered-business, Texas, and New York entity lookups remain the biggest gaps.</li>
+        <li><strong>Newsletter</strong> has steady above 50% open rate across the latest Beyond Banks editions.</li>
+        <li><strong>YouTube</strong> subscriber motion is still the number to push: net -11 on the latest Studio export, 5 gained against 16 lost, alongside 2.6K views and 25.9 watch hours.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="module">
+    <h2>Close CRM Lead Quality</h2>
+    <div class="group">
+      <ul>
+        <li><strong>Paid-attributed leads:</strong> 19 new paid-attributed leads this week out of 51 new leads total; the recent 30-day paid cohort is 71 leads, 6 of them carrying a Working Planet style paid source signal.</li>
+        <li><strong>Opportunity conversion:</strong> the recent paid cohort holds 23 opportunities, 4 of them new this week, with a type mix of 22 active and 1 won.</li>
+        <li><strong>Opportunity status mix</strong> (Patricia-maintained pipeline truth): 12 Demo No Show, 4 Demo Booked at 10%, 2 Post Demo Positive at 50%, 2 Post Demo negative at 5%, 1 Active Customer, 1 Initial Contact at 5%, and 1 Won at 100%.</li>
+        <li><strong>Meetings:</strong> 18 completed and 1 declined by lead, plus 1 possible no-show or stale meeting status; the explicit Demo No Show status Patricia added now shows on 12 opportunities.</li>
+        <li><strong>Fit tagging</strong> (Jordan's call fit/not-fit tag): 2 paid leads fit-tagged and 2 flagged Misfit, a bad-fit signal on paid spend.</li>
+        <li><strong>Net signal:</strong> 14 negative or lost opportunity signals against 4 positive or won, so the recent paid cohort is still tilting toward no-shows and bad fit rather than advancing opportunities.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="module">
+    <h2>Completed This Week</h2>
+    <div class="group">
+      <h3>Infrastructure and Security: SavvyCal to Close UTM sync deploy verified <span class="pill">Done</span></h3>
+      <ul>
+        <li><strong>Debugged the SavvyCal to Close UTM sync with Jordan and Loki</strong> and confirmed the signature verification fix is now deployed on the correct backend function, after finding Jordan's earlier deploy had landed on the signup function instead.</li>
+        <li><strong>Verified the API Gateway route, the handler wiring, and the Secrets Manager setup</strong> all check out against AWS, so the plumbing for the sync is correct.</li>
+        <li><strong>Documented the two-function deploy gotcha</strong> so the signup path and the SavvyCal path do not get crossed again on the next deploy.</li>
+        <li><strong>Net effect:</strong> the SavvyCal side of the paid-ad attribution sync is now sitting on the right function with its route, handler, and secrets all verified, so the only piece left is the signature scheme itself.</li>
+      </ul>
+      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783479674190579">#marketing, July 10</a>.</div>
+    </div>
+    <div class="group">
+      <h3>Working Planet onboarding: Demo No Show status added in Close <span class="pill">Done</span></h3>
+      <ul>
+        <li><strong>Patricia at Working Planet updated the Close opportunity field</strong> to add a Demo No Show status: "We have updated the opportunity field to have Demo No show status. This will help with visibility on your end as well."</li>
+        <li><strong>Close opportunities now carry an explicit Demo No Show status</strong>, which gives cleaner paid-lead quality visibility on which booked demos actually show.</li>
+        <li><strong>This lines up with the attribution work</strong>: once demo booking UTMs populate in Close, we can tie no-show rate back to paid source per campaign.</li>
+        <li><strong>For the meeting:</strong> the headline is that Working Planet is now tagging no-shows for us, so the paid-lead pipeline in Close should read truer week over week.</li>
+      </ul>
+      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C0B0DNX718A/p1783967325115249">#workingplanet-cobalt, July 14</a>.</div>
+    </div>
+  </section>
+
+  <section class="module">
+    <h2>In Progress</h2>
+    <div class="group">
+      <h3>Working Planet attribution: SavvyCal webhook verification fix <span class="pill amber">In Progress</span></h3>
+      <ul>
+        <li><strong>Found the root cause of the remaining SavvyCal webhook 401s</strong>: across 200-plus signed requests none ever passed verification, because SavvyCal signs its webhooks with a different signature scheme than the deployed verifier expects.</li>
+        <li><strong>Re-copying the webhook secret will not fix it</strong>; the signature verification needs a code change to match SavvyCal's actual signing scheme.</li>
+        <li><strong>Practically, this is why paid demo bookings have not shown UTMs in Close yet</strong>: the webhook is firing and reaching us, it is just being rejected at verification every time.</li>
+        <li><strong>Opened a diagnostic change to log only the inbound header shape</strong>, no secrets or signature bytes logged, addressed the review rounds, and CI is green; it is deliberately read-only so we can see what SavvyCal sends without touching verifier behavior yet.</li>
+        <li><strong>Once this lands, the real verifier fix follows</strong> and the sync can start writing demo booking UTMs into Close so paid demo attribution is finally captured end to end.</li>
+        <li><strong>Follow-up for Jordan:</strong> review and merge the diagnostic change, deploy it, and fire one real SavvyCal booking so we can confirm the header shape before the verifier fix ships.</li>
+      </ul>
+      <div class="source-line">Source: <a href="https://cobaltintelligence.slack.com/archives/C05KJJHDT6C/p1783479674190579">#marketing, July 10</a>.</div>
+    </div>
+  </section>
+
+  <section class="module dashboard-section">
+    <h2>Standing Dashboards</h2>
+    <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>SEO KPI Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/seo-kpi-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Year-to-date traffic, conversions, and OpenPageRank.</div></div><img src="assets/seo-kpi-dashboard.png" alt="SEO KPI dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>Traffic Insights</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/traffic-insights.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Weekly traffic breakdown and movement.</div></div><img src="assets/traffic-insights.png" alt="Traffic insights dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>AI Visibility Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/aeo-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">AEO prompt visibility and gaps from the latest run.</div></div><img src="assets/aeo-dashboard.png" alt="AI visibility dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>Newsletter KPI Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/newsletter-kpi-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Beyond Banks edition performance.</div></div><img src="assets/newsletter-kpi-dashboard.png" alt="Newsletter KPI dashboard screenshot"></div>
+    <div class="dash-card"><div class="dash-head"><div class="dash-title-row"><h3>YouTube KPI Dashboard</h3><a class="dash-link" href="https://laladim.github.io/life-dashboard-site/youtube-kpi-dashboard.html" target="_blank" rel="noopener">Open dashboard</a></div><div class="src">Cobalt YouTube performance from the latest Studio export.</div></div><img src="assets/youtube-kpi-dashboard.png" alt="YouTube KPI dashboard screenshot"></div>
+  </section>
+
+  <footer><span>Generated July 16, 2026 for Jordan meeting prep.</span><span>Root URL always shows the latest weekly report.</span></footer>
+</main>
+</body>
+</html>
